@@ -1,4 +1,5 @@
 <?php
+
 /**
  * BookingManagementApiTest
  * PHP version 7.4
@@ -29,6 +30,8 @@ use PHPUnit\Framework\TestCase;
 class BookingManagementApiTest extends TestCase
 {
 
+    protected \Nuitee\Api\BookingManagementApi $api;
+
     /**
      * Setup before running any test cases
      */
@@ -41,6 +44,9 @@ class BookingManagementApiTest extends TestCase
      */
     public function setUp(): void
     {
+        $apiKey = getenv("NUITEE_API_KEY");
+        $config = \Nuitee\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', $apiKey);
+        $this->api = new \Nuitee\Api\BookingManagementApi($config);
     }
 
     /**
@@ -77,8 +83,11 @@ class BookingManagementApiTest extends TestCase
      */
     public function testListBookings()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $response = $this->api->listBookings("FrT56hfty");
+        $this->assertNotNull(
+            $response,
+            "response is null"
+        );
     }
 
     /**
@@ -89,7 +98,10 @@ class BookingManagementApiTest extends TestCase
      */
     public function testRetrieve()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $response = $this->api->retrieve("3uFbXs3Vz");
+        $this->assertNotNull(
+            $response,
+            "response is null"
+        );
     }
 }

@@ -1,0 +1,4 @@
+test/Api/BookApiTest.php
+test/Api/BookingManagementApiTest.php
+test/Api/SearchApiTest.php
+test/Api/StaticDataApiTest.php

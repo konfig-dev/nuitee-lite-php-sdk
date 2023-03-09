@@ -1,4 +1,5 @@
 <?php
+
 /**
  * BookApiTest
  * PHP version 7.4
@@ -29,6 +30,8 @@ use PHPUnit\Framework\TestCase;
 class BookApiTest extends TestCase
 {
 
+    protected \Nuitee\Api\BookApi $api;
+
     /**
      * Setup before running any test cases
      */
@@ -41,6 +44,9 @@ class BookApiTest extends TestCase
      */
     public function setUp(): void
     {
+        $apiKey = getenv("NUITEE_API_KEY");
+        $config = \Nuitee\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', $apiKey);
+        $this->api = new \Nuitee\Api\BookApi($config);
     }
 
     /**
@@ -77,7 +83,13 @@ class BookApiTest extends TestCase
      */
     public function testPrebook()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $prebook_request = [
+            "rateId" => "2_GQZTMOBSG56DEMBSGMWTAMZNGE2XYMRQGIZS2MBTFUYTM7BRPQYTELBZPRKVG7CHGRNFIT2OIJLUORJTI5FU4USVI5MVSVCPJVJFOR2RLJCECTS2KNDVUVCEJVNFEV2NKFNEOR2NKJIUOTK2IRCU2QSXI5ITGR2NJZNFMR2ZLJCE2WK2K5DVKWSEIFHFEU2HLEZFITKOIJMEOTRWIRBUSWSTI5AVURCHJVBFIR2FGJMFSTKSKFDUSWSUIFGVUUSHLI3EOSZTKM3UWVSKLBMVMS2UKBJEWVSHKJCDIR2GIFKEKUK2KJDUSV2UKM3UEU2HJE2EIRZXINLEOSSMIZITIVBUI5CTGRCPJZFFUR2NGNKECTSKK5DVCWSUJFMVIWSOKZKVGR2OKJJUQRJSKNDU2WSSIZKTGRCFJ5FFMUCSJJCU2VCUGRDUSWKEIVGVUUKHJVMVIRKNJJNEOQKZJBMU2MZUI5EVSVCBJZBFURKOIJCUKSJSKNEVUSCDI5GVEUKHJFNFGMSNIJKEMVKZKRCXYVKTIR6HI4TBOZSWYZLSGF6HYMRSGEXDAML4GIYDEMZNGAZS2MJSPRBEE",
+        ];
+        $response = $this->api->prebook($prebook_request);
+        $this->assertNotNull(
+            $response,
+            "response is null"
+        );
     }
 }

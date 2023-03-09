@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SearchApiTest
  * PHP version 7.4
@@ -29,7 +30,9 @@ use PHPUnit\Framework\TestCase;
 class SearchApiTest extends TestCase
 {
 
+    protected \Nuitee\Api\SearchApi $api;
     /**
+     * 
      * Setup before running any test cases
      */
     public static function setUpBeforeClass(): void
@@ -41,6 +44,9 @@ class SearchApiTest extends TestCase
      */
     public function setUp(): void
     {
+        $apiKey = getenv("NUITEE_API_KEY");
+        $config = \Nuitee\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', $apiKey);
+        $this->api = new \Nuitee\Api\SearchApi($config);
     }
 
     /**
@@ -77,7 +83,19 @@ class SearchApiTest extends TestCase
      */
     public function testGetHotels()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $this->markTestSkipped('Currently not working');
+        $response = $this->api->getHotels(
+            hotel_ids: "1000018,26191,248093,57871,268206,28906,497829,436827,1000091,1000876,1001301,1001325,1001464,99249,99122,99121,99119",
+            checkin: strtotime("2025-01-01"),
+            checkout: strtotime("2025-01-25"),
+            country: "US",
+            adults: 1,
+            currency: "USD",
+            guest_nationality: "US",
+        );
+        $this->assertNotNull(
+            $response,
+            "response is null"
+        );
     }
 }

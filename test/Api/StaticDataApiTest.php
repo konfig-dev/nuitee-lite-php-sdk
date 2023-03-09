@@ -1,4 +1,5 @@
 <?php
+
 /**
  * StaticDataApiTest
  * PHP version 7.4
@@ -28,6 +29,7 @@ use PHPUnit\Framework\TestCase;
 
 class StaticDataApiTest extends TestCase
 {
+    protected \Nuitee\Api\StaticDataApi $api;
 
     /**
      * Setup before running any test cases
@@ -41,6 +43,9 @@ class StaticDataApiTest extends TestCase
      */
     public function setUp(): void
     {
+        $apiKey = getenv("NUITEE_API_KEY");
+        $config = \Nuitee\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', $apiKey);
+        $this->api = new \Nuitee\Api\StaticDataApi($config);
     }
 
     /**
@@ -65,8 +70,11 @@ class StaticDataApiTest extends TestCase
      */
     public function testListCities()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $response = $this->api->listCities(country_code: "AE");
+        $this->assertNotNull(
+            $response,
+            "response is null"
+        );
     }
 
     /**
@@ -77,8 +85,15 @@ class StaticDataApiTest extends TestCase
      */
     public function testListCountries()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $response = $this->api->listCountries();
+        $this->assertNotNull(
+            $response,
+            "response is null"
+        );
+        $this->assertNotNull(
+            $response->getData()[0]->getName(),
+            "response is null"
+        );
     }
 
     /**
@@ -89,8 +104,11 @@ class StaticDataApiTest extends TestCase
      */
     public function testListCurrencies()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $response = $this->api->listCurrencies();
+        $this->assertNotNull(
+            $response,
+            "response is null"
+        );
     }
 
     /**
@@ -101,8 +119,19 @@ class StaticDataApiTest extends TestCase
      */
     public function testListHotels()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $response = $this->api->listHotels(
+            country_code: "US",
+            city_name: "Las Vegas",
+            limit: 1000,
+            offset: 0,
+            latitude: 36.12510,
+            longitude: -115.16988,
+            distance: 1000
+        );
+        $this->assertNotNull(
+            $response,
+            "response is null"
+        );
     }
 
     /**
@@ -113,7 +142,10 @@ class StaticDataApiTest extends TestCase
      */
     public function testListIataCodes()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $response = $this->api->listIataCodes();
+        $this->assertNotNull(
+            $response,
+            "response is null"
+        );
     }
 }
