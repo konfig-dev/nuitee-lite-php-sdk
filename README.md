@@ -19,11 +19,11 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/konfig-dev/nuitee-lite-sdks/tree/main/php.git"
+      "url": "https://github.com/konfig-dev/nuitee-lite-php-sdks.git"
     }
   ],
   "require": {
-    "konfig-dev/nuitee-lite-sdks/tree/main/php": "*@dev"
+    "konfig-dev/nuitee-lite-php-sdks": "*@dev"
   }
 }
 ```
