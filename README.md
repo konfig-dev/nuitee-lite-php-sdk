@@ -69,7 +69,12 @@ try {
     $result = $apiInstance->book(
         book_request: $book_request
     );
-    print_r($result);
+    print_r($result->$getData());
+    
+    print_r($result->$getGuestLevel());
+    
+    print_r($result->$getSandbox());
+    
 } catch (\Exception $e) {
     echo 'Exception when calling BookApi->book: ', $e->getMessage(), PHP_EOL;
 }
