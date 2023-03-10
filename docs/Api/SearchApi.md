@@ -59,13 +59,9 @@ try {
         traveler_id: $traveler_id
     );
     print_r($result->$getData());
-    
     print_r($result->$getGuestLevel());
-    
     print_r($result->$getSandbox());
-    
     print_r($result->$getSessionId());
-    
 } catch (\Exception $e) {
     echo 'Exception when calling SearchApi->getHotelRates: ', $e->getMessage(), PHP_EOL;
 }
@@ -159,13 +155,9 @@ try {
         traveler_id: $traveler_id
     );
     print_r($result->$getData());
-    
     print_r($result->$getGuestLevel());
-    
     print_r($result->$getSandbox());
-    
     print_r($result->$getSessionId());
-    
 } catch (\Exception $e) {
     echo 'Exception when calling SearchApi->getHotels: ', $e->getMessage(), PHP_EOL;
 }

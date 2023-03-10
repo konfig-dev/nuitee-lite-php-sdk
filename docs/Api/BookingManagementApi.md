@@ -44,15 +44,10 @@ try {
         booking_id: $booking_id
     );
     print_r($result->$getBookingId());
-    
     print_r($result->$getCancellationFee());
-    
     print_r($result->$getCurrency());
-    
     print_r($result->$getRefundAmount());
-    
     print_r($result->$getStatus());
-    
 } catch (\Exception $e) {
     echo 'Exception when calling BookingManagementApi->cancel: ', $e->getMessage(), PHP_EOL;
 }
@@ -116,7 +111,6 @@ try {
         guest_id: $guest_id
     );
     print_r($result->$getData());
-    
 } catch (\Exception $e) {
     echo 'Exception when calling BookingManagementApi->listBookings: ', $e->getMessage(), PHP_EOL;
 }
@@ -180,7 +174,6 @@ try {
         booking_id: $booking_id
     );
     print_r($result->$getData());
-    
 } catch (\Exception $e) {
     echo 'Exception when calling BookingManagementApi->retrieve: ', $e->getMessage(), PHP_EOL;
 }

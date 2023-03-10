@@ -47,11 +47,8 @@ try {
         book_request: $book_request
     );
     print_r($result->$getData());
-    
     print_r($result->$getGuestLevel());
-    
     print_r($result->$getSandbox());
-    
 } catch (\Exception $e) {
     echo 'Exception when calling BookApi->book: ', $e->getMessage(), PHP_EOL;
 }
@@ -118,11 +115,8 @@ try {
         prebook_request: $prebook_request
     );
     print_r($result->$getData());
-    
     print_r($result->$getGuestLevel());
-    
     print_r($result->$getSandbox());
-    
 } catch (\Exception $e) {
     echo 'Exception when calling BookApi->prebook: ', $e->getMessage(), PHP_EOL;
 }

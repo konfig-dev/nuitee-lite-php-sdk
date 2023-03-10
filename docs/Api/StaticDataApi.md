@@ -46,7 +46,6 @@ try {
         country_code: $country_code
     );
     print_r($result->$getData());
-    
 } catch (\Exception $e) {
     echo 'Exception when calling StaticDataApi->listCities: ', $e->getMessage(), PHP_EOL;
 }
@@ -107,7 +106,6 @@ $apiInstance = new Nuitee\Api\StaticDataApi(
 try {
     $result = $apiInstance->listCountries();
     print_r($result->$getData());
-    
 } catch (\Exception $e) {
     echo 'Exception when calling StaticDataApi->listCountries: ', $e->getMessage(), PHP_EOL;
 }
@@ -164,7 +162,6 @@ $apiInstance = new Nuitee\Api\StaticDataApi(
 try {
     $result = $apiInstance->listCurrencies();
     print_r($result->$getData());
-    
 } catch (\Exception $e) {
     echo 'Exception when calling StaticDataApi->listCurrencies: ', $e->getMessage(), PHP_EOL;
 }
@@ -242,9 +239,7 @@ try {
         iata_code: $iata_code
     );
     print_r($result->$getData());
-    
     print_r($result->$getTotal());
-    
 } catch (\Exception $e) {
     echo 'Exception when calling StaticDataApi->listHotels: ', $e->getMessage(), PHP_EOL;
 }
@@ -313,7 +308,6 @@ $apiInstance = new Nuitee\Api\StaticDataApi(
 try {
     $result = $apiInstance->listIataCodes();
     print_r($result->$getData());
-    
 } catch (\Exception $e) {
     echo 'Exception when calling StaticDataApi->listIataCodes: ', $e->getMessage(), PHP_EOL;
 }
