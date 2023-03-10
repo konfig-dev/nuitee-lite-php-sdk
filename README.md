@@ -23,7 +23,7 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
     }
   ],
   "require": {
-    "konfig-dev/nuitee-lite-php-sdk": ""
+    "konfig-dev/nuitee-lite-php-sdk": "1.2.0"
   }
 }
 ```
