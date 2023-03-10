@@ -1,4 +1,4 @@
-# nuitee-lite-php-sdk [Packagist](https://packagist.org/packages/konfig/)
+# nuitee-lite-php-sdk [Packagist](https://packagist.org/packages/konfig/nuitee-lite-php-sdk)
 
 lite api hotel booking api
 
