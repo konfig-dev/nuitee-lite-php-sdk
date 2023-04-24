@@ -83,11 +83,11 @@ class SearchApiTest extends TestCase
      */
     public function testGetHotels()
     {
-        $this->markTestSkipped('Currently not working');
+        $this->markTestSkipped("Does not always work so skipping by default");
         $response = $this->api->getHotels(
             hotel_ids: "1000018,26191,248093,57871,268206,28906,497829,436827,1000091,1000876,1001301,1001325,1001464,99249,99122,99121,99119",
-            checkin: strtotime("2025-01-01"),
-            checkout: strtotime("2025-01-25"),
+            checkin: "2023-05-04",
+            checkout: "2023-05-25",
             adults: 1,
             currency: "USD",
             guest_nationality: "US",
