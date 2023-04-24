@@ -39,9 +39,9 @@ $apiInstance = new Nuitee\Api\BookApi(
     $config
 );
 
-$book_request = [
+$book_request = new \Nuitee\Model\BookRequest([
         "prebook_id" => "prebook_id_example",
-    ];
+    ]);
 
 try {
     $result = $apiInstance->book(
@@ -109,9 +109,9 @@ $apiInstance = new Nuitee\Api\BookApi(
     $config
 );
 
-$prebook_request = [
+$prebook_request = new \Nuitee\Model\PrebookRequest([
         "rate_id" => "rate_id_example",
-    ];
+    ]);
 
 try {
     $result = $apiInstance->prebook(
