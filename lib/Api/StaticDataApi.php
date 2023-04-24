@@ -731,6 +731,10 @@ class StaticDataApi
     public function listCitiesRequest($country_code, string $contentType = self::contentTypes['listCities'][0])
     {
 
+        // Check if $country_code is a string
+        if (!is_null($country_code) && !is_string($country_code)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($country_code, true), gettype($country_code)));
+        }
         // verify the required parameter 'country_code' is set
         if ($country_code === null || (is_array($country_code) && count($country_code) === 0)) {
             throw new \InvalidArgumentException(
@@ -1718,6 +1722,10 @@ class StaticDataApi
     public function listHotelsRequest($country_code, $city_name, $offset = null, $limit = null, $longitude = null, $latitude = null, $distance = null, string $contentType = self::contentTypes['listHotels'][0])
     {
 
+        // Check if $country_code is a string
+        if (!is_null($country_code) && !is_string($country_code)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($country_code, true), gettype($country_code)));
+        }
         // verify the required parameter 'country_code' is set
         if ($country_code === null || (is_array($country_code) && count($country_code) === 0)) {
             throw new \InvalidArgumentException(
@@ -1725,6 +1733,10 @@ class StaticDataApi
             );
         }
 
+        // Check if $city_name is a string
+        if (!is_null($city_name) && !is_string($city_name)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($city_name, true), gettype($city_name)));
+        }
         // verify the required parameter 'city_name' is set
         if ($city_name === null || (is_array($city_name) && count($city_name) === 0)) {
             throw new \InvalidArgumentException(

@@ -369,6 +369,10 @@ class GuestAndLoyaltyApi
     public function getGuestIdRequest($email = null, string $contentType = self::contentTypes['getGuestId'][0])
     {
 
+        // Check if $email is a string
+        if (!is_null($email) && !is_string($email)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)));
+        }
 
 
         $resourcePath = '/guests';

@@ -414,6 +414,10 @@ class SearchApi
     public function getHotelRatesRequest($hotel_ids, $checkin, $checkout, $guest_nationality, $currency, $adults, $children = null, $guest_id = null, string $contentType = self::contentTypes['getHotelRates'][0])
     {
 
+        // Check if $hotel_ids is a string
+        if (!is_null($hotel_ids) && !is_string($hotel_ids)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotel_ids, true), gettype($hotel_ids)));
+        }
         // verify the required parameter 'hotel_ids' is set
         if ($hotel_ids === null || (is_array($hotel_ids) && count($hotel_ids) === 0)) {
             throw new \InvalidArgumentException(
@@ -421,6 +425,10 @@ class SearchApi
             );
         }
 
+        // Check if $checkin is a string
+        if (!is_null($checkin) && !is_string($checkin)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($checkin, true), gettype($checkin)));
+        }
         // verify the required parameter 'checkin' is set
         if ($checkin === null || (is_array($checkin) && count($checkin) === 0)) {
             throw new \InvalidArgumentException(
@@ -428,6 +436,10 @@ class SearchApi
             );
         }
 
+        // Check if $checkout is a string
+        if (!is_null($checkout) && !is_string($checkout)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($checkout, true), gettype($checkout)));
+        }
         // verify the required parameter 'checkout' is set
         if ($checkout === null || (is_array($checkout) && count($checkout) === 0)) {
             throw new \InvalidArgumentException(
@@ -435,6 +447,10 @@ class SearchApi
             );
         }
 
+        // Check if $guest_nationality is a string
+        if (!is_null($guest_nationality) && !is_string($guest_nationality)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($guest_nationality, true), gettype($guest_nationality)));
+        }
         // verify the required parameter 'guest_nationality' is set
         if ($guest_nationality === null || (is_array($guest_nationality) && count($guest_nationality) === 0)) {
             throw new \InvalidArgumentException(
@@ -442,6 +458,10 @@ class SearchApi
             );
         }
 
+        // Check if $currency is a string
+        if (!is_null($currency) && !is_string($currency)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currency, true), gettype($currency)));
+        }
         // verify the required parameter 'currency' is set
         if ($currency === null || (is_array($currency) && count($currency) === 0)) {
             throw new \InvalidArgumentException(
@@ -456,7 +476,15 @@ class SearchApi
             );
         }
 
+        // Check if $children is a string
+        if (!is_null($children) && !is_string($children)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($children, true), gettype($children)));
+        }
 
+        // Check if $guest_id is a string
+        if (!is_null($guest_id) && !is_string($guest_id)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($guest_id, true), gettype($guest_id)));
+        }
 
 
         $resourcePath = '/hotels/rates';
@@ -926,6 +954,10 @@ class SearchApi
     public function getHotelsRequest($hotel_ids, $checkin, $checkout, $currency, $guest_nationality, $adults, $children = null, $guest_id = null, string $contentType = self::contentTypes['getHotels'][0])
     {
 
+        // Check if $hotel_ids is a string
+        if (!is_null($hotel_ids) && !is_string($hotel_ids)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotel_ids, true), gettype($hotel_ids)));
+        }
         // verify the required parameter 'hotel_ids' is set
         if ($hotel_ids === null || (is_array($hotel_ids) && count($hotel_ids) === 0)) {
             throw new \InvalidArgumentException(
@@ -933,6 +965,10 @@ class SearchApi
             );
         }
 
+        // Check if $checkin is a string
+        if (!is_null($checkin) && !is_string($checkin)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($checkin, true), gettype($checkin)));
+        }
         // verify the required parameter 'checkin' is set
         if ($checkin === null || (is_array($checkin) && count($checkin) === 0)) {
             throw new \InvalidArgumentException(
@@ -940,6 +976,10 @@ class SearchApi
             );
         }
 
+        // Check if $checkout is a string
+        if (!is_null($checkout) && !is_string($checkout)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($checkout, true), gettype($checkout)));
+        }
         // verify the required parameter 'checkout' is set
         if ($checkout === null || (is_array($checkout) && count($checkout) === 0)) {
             throw new \InvalidArgumentException(
@@ -947,6 +987,10 @@ class SearchApi
             );
         }
 
+        // Check if $currency is a string
+        if (!is_null($currency) && !is_string($currency)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currency, true), gettype($currency)));
+        }
         // verify the required parameter 'currency' is set
         if ($currency === null || (is_array($currency) && count($currency) === 0)) {
             throw new \InvalidArgumentException(
@@ -954,6 +998,10 @@ class SearchApi
             );
         }
 
+        // Check if $guest_nationality is a string
+        if (!is_null($guest_nationality) && !is_string($guest_nationality)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($guest_nationality, true), gettype($guest_nationality)));
+        }
         // verify the required parameter 'guest_nationality' is set
         if ($guest_nationality === null || (is_array($guest_nationality) && count($guest_nationality) === 0)) {
             throw new \InvalidArgumentException(
@@ -968,7 +1016,15 @@ class SearchApi
             );
         }
 
+        // Check if $children is a string
+        if (!is_null($children) && !is_string($children)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($children, true), gettype($children)));
+        }
 
+        // Check if $guest_id is a string
+        if (!is_null($guest_id) && !is_string($guest_id)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($guest_id, true), gettype($guest_id)));
+        }
 
 
         $resourcePath = '/hotels';

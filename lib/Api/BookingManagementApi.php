@@ -398,6 +398,10 @@ class BookingManagementApi
     public function cancelRequest($booking_id, string $contentType = self::contentTypes['cancel'][0])
     {
 
+        // Check if $booking_id is a string
+        if (!is_null($booking_id) && !is_string($booking_id)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($booking_id, true), gettype($booking_id)));
+        }
         // verify the required parameter 'booking_id' is set
         if ($booking_id === null || (is_array($booking_id) && count($booking_id) === 0)) {
             throw new \InvalidArgumentException(
@@ -744,6 +748,10 @@ class BookingManagementApi
     public function listBookingsRequest($guest_id, string $contentType = self::contentTypes['listBookings'][0])
     {
 
+        // Check if $guest_id is a string
+        if (!is_null($guest_id) && !is_string($guest_id)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($guest_id, true), gettype($guest_id)));
+        }
         // verify the required parameter 'guest_id' is set
         if ($guest_id === null || (is_array($guest_id) && count($guest_id) === 0)) {
             throw new \InvalidArgumentException(
@@ -1091,6 +1099,10 @@ class BookingManagementApi
     public function retrieveRequest($booking_id, string $contentType = self::contentTypes['retrieve'][0])
     {
 
+        // Check if $booking_id is a string
+        if (!is_null($booking_id) && !is_string($booking_id)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($booking_id, true), gettype($booking_id)));
+        }
         // verify the required parameter 'booking_id' is set
         if ($booking_id === null || (is_array($booking_id) && count($booking_id) === 0)) {
             throw new \InvalidArgumentException(
