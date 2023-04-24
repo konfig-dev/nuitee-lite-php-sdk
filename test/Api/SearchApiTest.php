@@ -88,7 +88,6 @@ class SearchApiTest extends TestCase
             hotel_ids: "1000018,26191,248093,57871,268206,28906,497829,436827,1000091,1000876,1001301,1001325,1001464,99249,99122,99121,99119",
             checkin: strtotime("2025-01-01"),
             checkout: strtotime("2025-01-25"),
-            country: "US",
             adults: 1,
             currency: "USD",
             guest_nationality: "US",

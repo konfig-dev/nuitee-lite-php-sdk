@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **terms_and_conditions** | **string** |  | [optional]
 **room_types** | [**\Nuitee\Model\PrebookResponseDataRoomTypesInner[]**](PrebookResponseDataRoomTypesInner.md) |  | [optional]
 **price** | **float** |  | [optional]
-**price_difference_percent** | **float** | the difference percentage if rate price has changed | [optional]
-**cancellation_changed** | **bool** | has cancellation changed | [optional]
-**board_changed** | **bool** | has board changed | [optional]
+**price_difference_percent** | **float** |  | [optional]
+**cancellation_changed** | **bool** |  | [optional]
+**board_changed** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

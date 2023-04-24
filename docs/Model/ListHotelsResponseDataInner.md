@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional]
+**id** | **float** |  | [optional]
 **name** | **string** |  | [optional]
 **hotel_description** | **string** |  | [optional]
 **hotel_important_information** | **string** |  | [optional]

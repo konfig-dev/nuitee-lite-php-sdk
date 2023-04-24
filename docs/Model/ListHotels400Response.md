@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error** | [**\Nuitee\Model\ListHotels400ResponseError**](ListHotels400ResponseError.md) |  | [optional]
+**data** | [**\Nuitee\Model\ListHotels400ResponseDataInner[]**](ListHotels400ResponseDataInner.md) |  | [optional]
+**total** | **float** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

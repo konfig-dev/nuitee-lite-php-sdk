@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error** | [**\Nuitee\Model\GetHotels400ResponseError**](GetHotels400ResponseError.md) |  | [optional]
+**data** | [**\Nuitee\Model\GetHotels400ResponseDataInner[]**](GetHotels400ResponseDataInner.md) |  | [optional]
+**guest_level** | **float** |  | [optional]
+**sandbox** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

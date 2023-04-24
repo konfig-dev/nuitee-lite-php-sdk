@@ -1,6 +1,11 @@
 # nuitee-lite-php-sdk [Packagist](https://packagist.org/packages/konfig/nuitee-lite-php-sdk)
 
-lite api hotel booking api
+The **Lite API** can be used to to do the following
+
+Get room rates & availability for a set of hotels
+Select a specific hotel with room availability and make a booking
+Manage the bookings - retrieve and cancel existing bookings
+Get static content for hotels, search hotels by destination
 
 
 ## Installation & Usage
@@ -23,7 +28,7 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
     }
   ],
   "require": {
-    "konfig-dev/nuitee-lite-php-sdk": "1.4.0"
+    "konfig/nuitee-lite-php-sdk": "1.5.0"
   }
 }
 ```
@@ -47,10 +52,13 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: ApiKeyAuth
+// Configure API key authorization: apikeyAuth
 $config = Nuitee\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Nuitee\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+// Setting host path is optional and defaults to https://api.liteapi.travel/v1.0
+// Nuitee\Configuration::getDefaultConfiguration()->setHost("https://api.liteapi.travel/v1.0");
 
 $apiInstance = new Nuitee\Api\BookApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -60,9 +68,7 @@ $apiInstance = new Nuitee\Api\BookApi(
 );
 
 $book_request = [
-        "prebook_id" => "v43KK76NH",
-        "session_id" => "GIYDEMZNGAZS2MJVPQZDAMRTFUYDGLJRGZ6DC7BRGIWDS7CNIF6HYMLEMRWV6Z3EKNXGC",
-        "rate_id" => "2_3P6L4TRYIFKLFM3DRKUQ4SBFCSO3QJBU27UQ76RU6HTAVUULOUZN3HLFLDS6HRUUQXXZNPELVXHLEXZF3J26PGYXGZEMZOPATZGAUBZLMB7BR6OL7QW4FIAIWTOCOLVHBIRGQFE7UJLTQP5RB6AXVPADIRT34YR56BBBSLSAWK2BMTRYBFRZCYG6HQKMULTSO6JIWWTEGVSBOHNFO7KTFXFMGCULXME2B4PZDCFWK62PT3EL4XUVOEB37V2EA7CWJKOZZU4OYDFB36YWUCID6LWVCCRMVU4PYZH2WBTJ6SLVVEGVZHTVGCVXA5GXEOCUE4ARMWXCIGRPASA5WBFI2T557GWUUZ6YMBZZMPUPCWI7DVO2OG6KY36WWASVBLEJRYFHJRRGQKDV5HY6INAD3YARYKVNFMITJ6BX5LVBVXNF33OZF34ZQDE5S74ND73FMHCYSSTZFOBCOBKYDHQ5BWGRYS7GALROITVAFG2OIFSXLUSKRT3MEURPJL7S3MHWEJMAYJFGGPMRZBEQZXAXDJI",
+        "prebook_id" => "prebook_id_example",
     ];
 
 try {
@@ -79,17 +85,19 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://api.nlite.ml/v1.0*
+All URIs are relative to *https://api.liteapi.travel/v1.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BookApi* | [**book**](docs/Api/BookApi.md#book) | **POST** /rates/book | Hotel rate book
-*BookApi* | [**prebook**](docs/Api/BookApi.md#prebook) | **POST** /rates/prebook | Hotel rate prebook
+*BookApi* | [**book**](docs/Api/BookApi.md#book) | **POST** /rates/book | hotel rate book
+*BookApi* | [**prebook**](docs/Api/BookApi.md#prebook) | **POST** /rates/prebook | hotel rate prebook
 *BookingManagementApi* | [**cancel**](docs/Api/BookingManagementApi.md#cancel) | **PUT** /bookings/{bookingId} | Booking cancel
 *BookingManagementApi* | [**listBookings**](docs/Api/BookingManagementApi.md#listbookings) | **GET** /bookings | Booking list
 *BookingManagementApi* | [**retrieve**](docs/Api/BookingManagementApi.md#retrieve) | **GET** /bookings/{bookingId} | Booking retrieve
-*SearchApi* | [**getHotelRates**](docs/Api/SearchApi.md#gethotelrates) | **GET** /hotels/rates | Hotel full rate availability
-*SearchApi* | [**getHotels**](docs/Api/SearchApi.md#gethotels) | **GET** /hotels | Hotel minimum rate availability
+*GuestAndLoyaltyApi* | [**getGuestId**](docs/Api/GuestAndLoyaltyApi.md#getguestid) | **GET** /guests | guests
+*SearchApi* | [**getHotelRates**](docs/Api/SearchApi.md#gethotelrates) | **GET** /hotels/rates | hotel full rates availability
+*SearchApi* | [**getHotels**](docs/Api/SearchApi.md#gethotels) | **GET** /hotels | hotel minimum rates availability
+*StaticDataApi* | [**getHotel**](docs/Api/StaticDataApi.md#gethotel) | **GET** /data/hotel | Hotel details
 *StaticDataApi* | [**listCities**](docs/Api/StaticDataApi.md#listcities) | **GET** /data/cities | City list
 *StaticDataApi* | [**listCountries**](docs/Api/StaticDataApi.md#listcountries) | **GET** /data/countries | Country list
 *StaticDataApi* | [**listCurrencies**](docs/Api/StaticDataApi.md#listcurrencies) | **GET** /data/currencies | Currency list
@@ -99,33 +107,90 @@ Class | Method | HTTP request | Description
 ## Models
 
 - [Book400Response](docs/Model/Book400Response.md)
-- [Book400ResponseError](docs/Model/Book400ResponseError.md)
+- [Book400ResponseData](docs/Model/Book400ResponseData.md)
+- [Book400ResponseDataBookedRoomsInner](docs/Model/Book400ResponseDataBookedRoomsInner.md)
+- [Book400ResponseDataBookedRoomsInnerRate](docs/Model/Book400ResponseDataBookedRoomsInnerRate.md)
+- [Book400ResponseDataBookedRoomsInnerRateRetailRate](docs/Model/Book400ResponseDataBookedRoomsInnerRateRetailRate.md)
+- [Book400ResponseDataBookedRoomsInnerRateRetailRateTotal](docs/Model/Book400ResponseDataBookedRoomsInnerRateRetailRateTotal.md)
+- [Book400ResponseDataBookedRoomsInnerRoomType](docs/Model/Book400ResponseDataBookedRoomsInnerRoomType.md)
+- [Book400ResponseDataCancellation](docs/Model/Book400ResponseDataCancellation.md)
+- [Book400ResponseDataCancellationFee](docs/Model/Book400ResponseDataCancellationFee.md)
+- [Book400ResponseDataCancellationFeePrice](docs/Model/Book400ResponseDataCancellationFeePrice.md)
+- [Book400ResponseDataCancellationPolicies](docs/Model/Book400ResponseDataCancellationPolicies.md)
+- [Book400ResponseDataCancellationPoliciesCancelPolicyInfosInner](docs/Model/Book400ResponseDataCancellationPoliciesCancelPolicyInfosInner.md)
+- [Book400ResponseDataGuestInfo](docs/Model/Book400ResponseDataGuestInfo.md)
+- [Book400ResponseDataHotel](docs/Model/Book400ResponseDataHotel.md)
+- [Book400ResponseDataHotelAddress](docs/Model/Book400ResponseDataHotelAddress.md)
+- [Book400ResponseDataHotelLocation](docs/Model/Book400ResponseDataHotelLocation.md)
 - [Book401Response](docs/Model/Book401Response.md)
-- [Book500Response](docs/Model/Book500Response.md)
+- [Book401ResponseData](docs/Model/Book401ResponseData.md)
+- [Book401ResponseDataBookedRoomsInner](docs/Model/Book401ResponseDataBookedRoomsInner.md)
+- [Book401ResponseDataBookedRoomsInnerRate](docs/Model/Book401ResponseDataBookedRoomsInnerRate.md)
+- [Book401ResponseDataBookedRoomsInnerRateRetailRate](docs/Model/Book401ResponseDataBookedRoomsInnerRateRetailRate.md)
+- [Book401ResponseDataBookedRoomsInnerRateRetailRateTotal](docs/Model/Book401ResponseDataBookedRoomsInnerRateRetailRateTotal.md)
+- [Book401ResponseDataBookedRoomsInnerRoomType](docs/Model/Book401ResponseDataBookedRoomsInnerRoomType.md)
+- [Book401ResponseDataCancellation](docs/Model/Book401ResponseDataCancellation.md)
+- [Book401ResponseDataCancellationFee](docs/Model/Book401ResponseDataCancellationFee.md)
+- [Book401ResponseDataCancellationFeePrice](docs/Model/Book401ResponseDataCancellationFeePrice.md)
+- [Book401ResponseDataCancellationPolicies](docs/Model/Book401ResponseDataCancellationPolicies.md)
+- [Book401ResponseDataCancellationPoliciesCancelPolicyInfosInner](docs/Model/Book401ResponseDataCancellationPoliciesCancelPolicyInfosInner.md)
+- [Book401ResponseDataGuestInfo](docs/Model/Book401ResponseDataGuestInfo.md)
+- [Book401ResponseDataHotel](docs/Model/Book401ResponseDataHotel.md)
+- [Book401ResponseDataHotelAddress](docs/Model/Book401ResponseDataHotelAddress.md)
+- [Book401ResponseDataHotelLocation](docs/Model/Book401ResponseDataHotelLocation.md)
 - [BookRequest](docs/Model/BookRequest.md)
 - [BookRequestGuestInfo](docs/Model/BookRequestGuestInfo.md)
+- [BookRequestPayment](docs/Model/BookRequestPayment.md)
 - [BookResponse](docs/Model/BookResponse.md)
 - [BookResponseData](docs/Model/BookResponseData.md)
 - [BookResponseDataBookedRoomsInner](docs/Model/BookResponseDataBookedRoomsInner.md)
 - [BookResponseDataBookedRoomsInnerRate](docs/Model/BookResponseDataBookedRoomsInnerRate.md)
 - [BookResponseDataBookedRoomsInnerRateRetailRate](docs/Model/BookResponseDataBookedRoomsInnerRateRetailRate.md)
+- [BookResponseDataBookedRoomsInnerRateRetailRateTotal](docs/Model/BookResponseDataBookedRoomsInnerRateRetailRateTotal.md)
 - [BookResponseDataBookedRoomsInnerRoomType](docs/Model/BookResponseDataBookedRoomsInnerRoomType.md)
 - [BookResponseDataCancellation](docs/Model/BookResponseDataCancellation.md)
 - [BookResponseDataCancellationFee](docs/Model/BookResponseDataCancellationFee.md)
 - [BookResponseDataCancellationFeePrice](docs/Model/BookResponseDataCancellationFeePrice.md)
 - [BookResponseDataCancellationPolicies](docs/Model/BookResponseDataCancellationPolicies.md)
+- [BookResponseDataCancellationPoliciesCancelPolicyInfosInner](docs/Model/BookResponseDataCancellationPoliciesCancelPolicyInfosInner.md)
 - [BookResponseDataGuestInfo](docs/Model/BookResponseDataGuestInfo.md)
 - [BookResponseDataHotel](docs/Model/BookResponseDataHotel.md)
 - [BookResponseDataHotelAddress](docs/Model/BookResponseDataHotelAddress.md)
 - [BookResponseDataHotelLocation](docs/Model/BookResponseDataHotelLocation.md)
-- [Cancel400Response](docs/Model/Cancel400Response.md)
-- [Cancel400ResponseError](docs/Model/Cancel400ResponseError.md)
+- [Cancel204Response](docs/Model/Cancel204Response.md)
+- [Cancel204ResponseData](docs/Model/Cancel204ResponseData.md)
+- [Cancel304Response](docs/Model/Cancel304Response.md)
+- [Cancel304ResponseData](docs/Model/Cancel304ResponseData.md)
 - [Cancel401Response](docs/Model/Cancel401Response.md)
-- [Cancel500Response](docs/Model/Cancel500Response.md)
-- [Cancel500ResponseError](docs/Model/Cancel500ResponseError.md)
+- [Cancel401ResponseData](docs/Model/Cancel401ResponseData.md)
 - [CancelResponse](docs/Model/CancelResponse.md)
+- [CancelResponseData](docs/Model/CancelResponseData.md)
+- [GetGuestId400Response](docs/Model/GetGuestId400Response.md)
+- [GetGuestId400ResponseDataInner](docs/Model/GetGuestId400ResponseDataInner.md)
+- [GetGuestId401Response](docs/Model/GetGuestId401Response.md)
+- [GetGuestId401ResponseDataInner](docs/Model/GetGuestId401ResponseDataInner.md)
+- [GetGuestIdResponse](docs/Model/GetGuestIdResponse.md)
+- [GetGuestIdResponseDataInner](docs/Model/GetGuestIdResponseDataInner.md)
+- [GetHotel400Response](docs/Model/GetHotel400Response.md)
+- [GetHotel400ResponseDataInner](docs/Model/GetHotel400ResponseDataInner.md)
+- [GetHotel400ResponseDataInnerAdditionalPolicies](docs/Model/GetHotel400ResponseDataInnerAdditionalPolicies.md)
+- [GetHotel400ResponseDataInnerAdditionalPoliciesCotsAndExtraBedsInner](docs/Model/GetHotel400ResponseDataInnerAdditionalPoliciesCotsAndExtraBedsInner.md)
+- [GetHotel400ResponseDataInnerCheckinCheckoutTimes](docs/Model/GetHotel400ResponseDataInnerCheckinCheckoutTimes.md)
+- [GetHotel400ResponseDataInnerHotelFacilitiesInner](docs/Model/GetHotel400ResponseDataInnerHotelFacilitiesInner.md)
+- [GetHotel400ResponseDataInnerHotelPhotosInner](docs/Model/GetHotel400ResponseDataInnerHotelPhotosInner.md)
+- [GetHotel400ResponseDataInnerLocation](docs/Model/GetHotel400ResponseDataInnerLocation.md)
+- [GetHotel401Response](docs/Model/GetHotel401Response.md)
+- [GetHotel401ResponseDataInner](docs/Model/GetHotel401ResponseDataInner.md)
+- [GetHotel401ResponseDataInnerAdditionalPolicies](docs/Model/GetHotel401ResponseDataInnerAdditionalPolicies.md)
+- [GetHotel401ResponseDataInnerAdditionalPoliciesCotsAndExtraBedsInner](docs/Model/GetHotel401ResponseDataInnerAdditionalPoliciesCotsAndExtraBedsInner.md)
+- [GetHotel401ResponseDataInnerCheckinCheckoutTimes](docs/Model/GetHotel401ResponseDataInnerCheckinCheckoutTimes.md)
+- [GetHotel401ResponseDataInnerHotelFacilitiesInner](docs/Model/GetHotel401ResponseDataInnerHotelFacilitiesInner.md)
+- [GetHotel401ResponseDataInnerHotelPhotosInner](docs/Model/GetHotel401ResponseDataInnerHotelPhotosInner.md)
+- [GetHotel401ResponseDataInnerLocation](docs/Model/GetHotel401ResponseDataInnerLocation.md)
+- [GetHotelRates204Response](docs/Model/GetHotelRates204Response.md)
+- [GetHotelRates204ResponseError](docs/Model/GetHotelRates204ResponseError.md)
 - [GetHotelRates400Response](docs/Model/GetHotelRates400Response.md)
-- [GetHotelRates401Response](docs/Model/GetHotelRates401Response.md)
+- [GetHotelRates400ResponseError](docs/Model/GetHotelRates400ResponseError.md)
 - [GetHotelRatesResponse](docs/Model/GetHotelRatesResponse.md)
 - [GetHotelRatesResponseDataInner](docs/Model/GetHotelRatesResponseDataInner.md)
 - [GetHotelRatesResponseDataInnerRoomTypesInner](docs/Model/GetHotelRatesResponseDataInnerRoomTypesInner.md)
@@ -133,30 +198,71 @@ Class | Method | HTTP request | Description
 - [GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerCancellationPolicies](docs/Model/GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerCancellationPolicies.md)
 - [GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerCancellationPoliciesCancelPolicyInfosInner](docs/Model/GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerCancellationPoliciesCancelPolicyInfosInner.md)
 - [GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerRetailRate](docs/Model/GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerRetailRate.md)
-- [GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerRetailRateTaxesAndFeesInner](docs/Model/GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerRetailRateTaxesAndFeesInner.md)
+- [GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerRetailRateTaxesAndFees](docs/Model/GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerRetailRateTaxesAndFees.md)
+- [GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerRetailRateTaxesAndFeesOneOfInner](docs/Model/GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerRetailRateTaxesAndFeesOneOfInner.md)
 - [GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerRetailRateTotalInner](docs/Model/GetHotelRatesResponseDataInnerRoomTypesInnerRatesInnerRetailRateTotalInner.md)
+- [GetHotelResponse](docs/Model/GetHotelResponse.md)
+- [GetHotelResponseDataInner](docs/Model/GetHotelResponseDataInner.md)
+- [GetHotelResponseDataInnerAdditionalPolicies](docs/Model/GetHotelResponseDataInnerAdditionalPolicies.md)
+- [GetHotelResponseDataInnerAdditionalPoliciesCotsAndExtraBedsInner](docs/Model/GetHotelResponseDataInnerAdditionalPoliciesCotsAndExtraBedsInner.md)
+- [GetHotelResponseDataInnerCheckinCheckoutTimes](docs/Model/GetHotelResponseDataInnerCheckinCheckoutTimes.md)
+- [GetHotelResponseDataInnerHotelFacilitiesInner](docs/Model/GetHotelResponseDataInnerHotelFacilitiesInner.md)
+- [GetHotelResponseDataInnerHotelPhotosInner](docs/Model/GetHotelResponseDataInnerHotelPhotosInner.md)
+- [GetHotelResponseDataInnerLocation](docs/Model/GetHotelResponseDataInnerLocation.md)
+- [GetHotels204Response](docs/Model/GetHotels204Response.md)
+- [GetHotels204ResponseDataInner](docs/Model/GetHotels204ResponseDataInner.md)
 - [GetHotels400Response](docs/Model/GetHotels400Response.md)
-- [GetHotels400ResponseError](docs/Model/GetHotels400ResponseError.md)
+- [GetHotels400ResponseDataInner](docs/Model/GetHotels400ResponseDataInner.md)
 - [GetHotels401Response](docs/Model/GetHotels401Response.md)
-- [GetHotels401ResponseError](docs/Model/GetHotels401ResponseError.md)
+- [GetHotels401ResponseDataInner](docs/Model/GetHotels401ResponseDataInner.md)
 - [GetHotelsResponse](docs/Model/GetHotelsResponse.md)
 - [GetHotelsResponseDataInner](docs/Model/GetHotelsResponseDataInner.md)
+- [ListBookings204Response](docs/Model/ListBookings204Response.md)
+- [ListBookings204ResponseDataInner](docs/Model/ListBookings204ResponseDataInner.md)
+- [ListBookings401Response](docs/Model/ListBookings401Response.md)
+- [ListBookings401ResponseDataInner](docs/Model/ListBookings401ResponseDataInner.md)
 - [ListBookingsResponse](docs/Model/ListBookingsResponse.md)
 - [ListBookingsResponseDataInner](docs/Model/ListBookingsResponseDataInner.md)
+- [ListCities400Response](docs/Model/ListCities400Response.md)
+- [ListCities400ResponseDataInner](docs/Model/ListCities400ResponseDataInner.md)
+- [ListCities401Response](docs/Model/ListCities401Response.md)
+- [ListCities401ResponseDataInner](docs/Model/ListCities401ResponseDataInner.md)
 - [ListCitiesResponse](docs/Model/ListCitiesResponse.md)
 - [ListCitiesResponseDataInner](docs/Model/ListCitiesResponseDataInner.md)
+- [ListCountries401Response](docs/Model/ListCountries401Response.md)
+- [ListCountries401ResponseDataInner](docs/Model/ListCountries401ResponseDataInner.md)
 - [ListCountriesResponse](docs/Model/ListCountriesResponse.md)
 - [ListCountriesResponseDataInner](docs/Model/ListCountriesResponseDataInner.md)
+- [ListCurrencies401Response](docs/Model/ListCurrencies401Response.md)
+- [ListCurrencies401ResponseDataInner](docs/Model/ListCurrencies401ResponseDataInner.md)
 - [ListCurrenciesResponse](docs/Model/ListCurrenciesResponse.md)
 - [ListCurrenciesResponseDataInner](docs/Model/ListCurrenciesResponseDataInner.md)
 - [ListHotels400Response](docs/Model/ListHotels400Response.md)
-- [ListHotels400ResponseError](docs/Model/ListHotels400ResponseError.md)
+- [ListHotels400ResponseDataInner](docs/Model/ListHotels400ResponseDataInner.md)
 - [ListHotels401Response](docs/Model/ListHotels401Response.md)
+- [ListHotels401ResponseDataInner](docs/Model/ListHotels401ResponseDataInner.md)
 - [ListHotelsResponse](docs/Model/ListHotelsResponse.md)
 - [ListHotelsResponseDataInner](docs/Model/ListHotelsResponseDataInner.md)
+- [ListIataCodes401Response](docs/Model/ListIataCodes401Response.md)
+- [ListIataCodes401ResponseDataInner](docs/Model/ListIataCodes401ResponseDataInner.md)
 - [ListIataCodesResponse](docs/Model/ListIataCodesResponse.md)
 - [ListIataCodesResponseDataInner](docs/Model/ListIataCodesResponseDataInner.md)
+- [Prebook400Response](docs/Model/Prebook400Response.md)
+- [Prebook400ResponseData](docs/Model/Prebook400ResponseData.md)
+- [Prebook400ResponseDataRoomTypesInner](docs/Model/Prebook400ResponseDataRoomTypesInner.md)
+- [Prebook400ResponseDataRoomTypesInnerRatesInner](docs/Model/Prebook400ResponseDataRoomTypesInnerRatesInner.md)
+- [Prebook400ResponseDataRoomTypesInnerRatesInnerCancellationPolicies](docs/Model/Prebook400ResponseDataRoomTypesInnerRatesInnerCancellationPolicies.md)
+- [Prebook400ResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolicyInfosInner](docs/Model/Prebook400ResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolicyInfosInner.md)
+- [Prebook400ResponseDataRoomTypesInnerRatesInnerRetailRate](docs/Model/Prebook400ResponseDataRoomTypesInnerRatesInnerRetailRate.md)
+- [Prebook400ResponseDataRoomTypesInnerRatesInnerRetailRateTotalInner](docs/Model/Prebook400ResponseDataRoomTypesInnerRatesInnerRetailRateTotalInner.md)
 - [Prebook401Response](docs/Model/Prebook401Response.md)
+- [Prebook401ResponseData](docs/Model/Prebook401ResponseData.md)
+- [Prebook401ResponseDataRoomTypesInner](docs/Model/Prebook401ResponseDataRoomTypesInner.md)
+- [Prebook401ResponseDataRoomTypesInnerRatesInner](docs/Model/Prebook401ResponseDataRoomTypesInnerRatesInner.md)
+- [Prebook401ResponseDataRoomTypesInnerRatesInnerCancellationPolicies](docs/Model/Prebook401ResponseDataRoomTypesInnerRatesInnerCancellationPolicies.md)
+- [Prebook401ResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolicyInfosInner](docs/Model/Prebook401ResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolicyInfosInner.md)
+- [Prebook401ResponseDataRoomTypesInnerRatesInnerRetailRate](docs/Model/Prebook401ResponseDataRoomTypesInnerRatesInnerRetailRate.md)
+- [Prebook401ResponseDataRoomTypesInnerRatesInnerRetailRateTotalInner](docs/Model/Prebook401ResponseDataRoomTypesInnerRatesInnerRetailRateTotalInner.md)
 - [PrebookRequest](docs/Model/PrebookRequest.md)
 - [PrebookResponse](docs/Model/PrebookResponse.md)
 - [PrebookResponseData](docs/Model/PrebookResponseData.md)
@@ -165,19 +271,27 @@ Class | Method | HTTP request | Description
 - [PrebookResponseDataRoomTypesInnerRatesInnerCancellationPolicies](docs/Model/PrebookResponseDataRoomTypesInnerRatesInnerCancellationPolicies.md)
 - [PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolicyInfosInner](docs/Model/PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolicyInfosInner.md)
 - [PrebookResponseDataRoomTypesInnerRatesInnerRetailRate](docs/Model/PrebookResponseDataRoomTypesInnerRatesInnerRetailRate.md)
-- [Retrieve400Response](docs/Model/Retrieve400Response.md)
-- [Retrieve400ResponseError](docs/Model/Retrieve400ResponseError.md)
+- [PrebookResponseDataRoomTypesInnerRatesInnerRetailRateTotalInner](docs/Model/PrebookResponseDataRoomTypesInnerRatesInnerRetailRateTotalInner.md)
+- [Retrieve204Response](docs/Model/Retrieve204Response.md)
+- [Retrieve204ResponseError](docs/Model/Retrieve204ResponseError.md)
+- [Retrieve401Response](docs/Model/Retrieve401Response.md)
+- [Retrieve401ResponseError](docs/Model/Retrieve401ResponseError.md)
 - [RetrieveResponse](docs/Model/RetrieveResponse.md)
 - [RetrieveResponseData](docs/Model/RetrieveResponseData.md)
 - [RetrieveResponseDataBookedRoomsInner](docs/Model/RetrieveResponseDataBookedRoomsInner.md)
 - [RetrieveResponseDataBookedRoomsInnerRate](docs/Model/RetrieveResponseDataBookedRoomsInnerRate.md)
+- [RetrieveResponseDataBookedRoomsInnerRateRetailRate](docs/Model/RetrieveResponseDataBookedRoomsInnerRateRetailRate.md)
+- [RetrieveResponseDataBookedRoomsInnerRateRetailRateTotal](docs/Model/RetrieveResponseDataBookedRoomsInnerRateRetailRateTotal.md)
 - [RetrieveResponseDataBookedRoomsInnerRoomType](docs/Model/RetrieveResponseDataBookedRoomsInnerRoomType.md)
 - [RetrieveResponseDataCancellationPolicies](docs/Model/RetrieveResponseDataCancellationPolicies.md)
+- [RetrieveResponseDataCancellationPoliciesCancelPolicyInfos](docs/Model/RetrieveResponseDataCancellationPoliciesCancelPolicyInfos.md)
+- [RetrieveResponseDataCancellationPoliciesCancelPolicyInfosOneOfInner](docs/Model/RetrieveResponseDataCancellationPoliciesCancelPolicyInfosOneOfInner.md)
+- [RetrieveResponseDataContact](docs/Model/RetrieveResponseDataContact.md)
 - [RetrieveResponseDataGuestInfo](docs/Model/RetrieveResponseDataGuestInfo.md)
 
 ## Authorization
 
-### ApiKeyAuth
+### apikeyAuth
 
 - **Type**: API key
 - **API key parameter name**: X-API-Key
@@ -193,13 +307,9 @@ composer install
 vendor/bin/phpunit
 ```
 
-## Author
-
-
-
 ## About this package
 
 This PHP package is automatically generated by [Konfig](https://konfigthis.com):
 
 - API version: `1.0.0`
-    - Package version: `1.4.0`
+    - Package version: `1.5.0`

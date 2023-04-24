@@ -1,22 +1,22 @@
 # Nuitee\SearchApi
 
-All URIs are relative to https://api.nlite.ml/v1.0, except if the operation defines another base path.
+All URIs are relative to https://api.liteapi.travel/v1.0, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getHotelRates()**](SearchApi.md#getHotelRates) | **GET** /hotels/rates | Hotel full rate availability |
-| [**getHotels()**](SearchApi.md#getHotels) | **GET** /hotels | Hotel minimum rate availability |
+| [**getHotelRates()**](SearchApi.md#getHotelRates) | **GET** /hotels/rates | hotel full rates availability |
+| [**getHotels()**](SearchApi.md#getHotels) | **GET** /hotels | hotel minimum rates availability |
 
 
 ## `getHotelRates()`
 
 ```php
-getHotelRates($hotel_ids, $checkin, $checkout, $adults, $guest_nationality, $currency, $children, $session_id, $traveler_id): \Nuitee\Model\GetHotelRatesResponse
+getHotelRates($hotel_ids, $checkin, $checkout, $guest_nationality, $currency, $adults, $children, $guest_id): \Nuitee\Model\GetHotelRatesResponse
 ```
 
-Hotel full rate availability
+hotel full rates availability
 
-This endpoint allows you to send a hotel ID with a specific date range and in response receive all the rooms, rates that are available along with the cancelllation policies.
+The Full Rates  API is to search and return all available rooms along with its rates, cancellation policies for a list of hotel ID's based on the search dates.   For each hotel ID, all available room information is returned.   The API also has a built in loyalty rewards system. The system rewards return users who have made prior bookings.   If the search is coming from a known guest ID, the guest level is also returned along with the pricing that's appropriate for the guest level.  If it is a new user, the guest ID will be generated at the time of the first confirmed booking.
 
 ### Example
 
@@ -24,10 +24,13 @@ This endpoint allows you to send a hotel ID with a specific date range and in re
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: ApiKeyAuth
+// Configure API key authorization: apikeyAuth
 $config = Nuitee\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Nuitee\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+// Setting host path is optional and defaults to https://api.liteapi.travel/v1.0
+// Nuitee\Configuration::getDefaultConfiguration()->setHost("https://api.liteapi.travel/v1.0");
 
 $apiInstance = new Nuitee\Api\SearchApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -36,32 +39,29 @@ $apiInstance = new Nuitee\Api\SearchApi(
     $config
 );
 
-$hotel_ids = "2345,557,565,4239";
-$checkin = "2023-01-15";
-$checkout = "2023-01-16";
-$adults = 1;
-$guest_nationality = "US";
-$currency = "USD";
-$children = "5,9";
-$session_id = "GIYDEMZNGAYS2MJVPQZDAMRTFUYDCLJRGZ6DC7D4JVAXY7DZM5MDMQKKJJAXKZY";
-$traveler_id = "string_example";
+$hotel_ids = "49117,49123"; // List of hotelIds
+$checkin = "2023-03-15"; // Check in data in YYYY-MM-DD format
+$checkout = "2023-03-16"; // Check out data in YYYY-MM-DD format
+$guest_nationality = "US"; // Guest nationality ISO-2 code - example (SG)
+$currency = "USD"; // Currency code - example (USD)
+$adults = 1; // Number of adult guests staying
+$children = "12,9"; // Number of children staying if any
+$guest_id = "traveler1"; // Unique traveler ID if available
 
 try {
     $result = $apiInstance->getHotelRates(
         hotel_ids: $hotel_ids, 
         checkin: $checkin, 
         checkout: $checkout, 
-        adults: $adults, 
         guest_nationality: $guest_nationality, 
         currency: $currency, 
+        adults: $adults, 
         children: $children, 
-        session_id: $session_id, 
-        traveler_id: $traveler_id
+        guest_id: $guest_id
     );
     print_r($result->$getData());
     print_r($result->$getGuestLevel());
     print_r($result->$getSandbox());
-    print_r($result->$getSessionId());
 } catch (\Exception $e) {
     echo 'Exception when calling SearchApi->getHotelRates: ', $e->getMessage(), PHP_EOL;
 }
@@ -71,15 +71,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **hotel_ids** | **string**| hotel ids separated by comma, max number of hotel ids is 10, example (2345,557,56) | |
-| **checkin** | **\DateTime**| start date yyyy-mm-dd format | |
-| **checkout** | **\DateTime**| end date yyyy-mm-dd format | |
-| **adults** | **int**| adults number | |
-| **guest_nationality** | **string**| guest nationality country code iso-2 example (US) | |
-| **currency** | **string**| currency code example (USD) | |
-| **children** | **string**| children ages separated by a comma | [optional] |
-| **session_id** | **string**| session id if retrieved from hotels search | [optional] |
-| **traveler_id** | **string**| traveler unique id | [optional] |
+| **hotel_ids** | **string**| List of hotelIds | |
+| **checkin** | **string**| Check in data in YYYY-MM-DD format | |
+| **checkout** | **string**| Check out data in YYYY-MM-DD format | |
+| **guest_nationality** | **string**| Guest nationality ISO-2 code - example (SG) | |
+| **currency** | **string**| Currency code - example (USD) | |
+| **adults** | **int**| Number of adult guests staying | |
+| **children** | **string**| Number of children staying if any | [optional] |
+| **guest_id** | **string**| Unique traveler ID if available | [optional] |
 
 ### Return type
 
@@ -87,7 +86,7 @@ try {
 
 ### Authorization
 
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
+[apikeyAuth](../../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -101,12 +100,12 @@ try {
 ## `getHotels()`
 
 ```php
-getHotels($hotel_ids, $checkin, $checkout, $country, $adults, $currency, $guest_nationality, $latitude, $longitude, $distance, $children, $traveler_id): \Nuitee\Model\GetHotelsResponse
+getHotels($hotel_ids, $checkin, $checkout, $currency, $guest_nationality, $adults, $children, $guest_id): \Nuitee\Model\GetHotelsResponse
 ```
 
-Hotel minimum rate availability
+hotel minimum rates availability
 
-This endpoint allows you to send a list of hotel ID's for a specific date range and in response receive the best rate available for each of the hotel ID's. The limit is set to 200 hotels
+**Hotel Minimum Rates API** is to search and return the minimum room rates that are available for a list of hotel ID's on the specified search dates.  For each hotel ID, the minimum room rate that is available is returned.  The API also has a built in loyalty rewards system. The system rewards return users who have made prior bookings.  If the search is coming from a known guest ID, the guest level is also returned along with pricing has more discounts.  If it is a new user, the guest ID will be generated at the time of the first confirmed booking.
 
 ### Example
 
@@ -114,10 +113,13 @@ This endpoint allows you to send a list of hotel ID's for a specific date range 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: ApiKeyAuth
+// Configure API key authorization: apikeyAuth
 $config = Nuitee\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Nuitee\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+// Setting host path is optional and defaults to https://api.liteapi.travel/v1.0
+// Nuitee\Configuration::getDefaultConfiguration()->setHost("https://api.liteapi.travel/v1.0");
 
 $apiInstance = new Nuitee\Api\SearchApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -126,38 +128,29 @@ $apiInstance = new Nuitee\Api\SearchApi(
     $config
 );
 
-$hotel_ids = "2345,557,565,4239";
-$checkin = "Sun Jan 14 16:00:00 PST 2024";
-$checkout = "Fri Jan 19 16:00:00 PST 2024";
-$country = "US";
-$adults = 2;
-$currency = "USD";
-$guest_nationality = "CA";
-$latitude = 32.31823;
-$longitude = -86.902298;
-$distance = 20;
-$children = "7,14";
-$traveler_id = "TMX54RS4";
+$hotel_ids = "49117,49123"; // List of hotelIds
+$checkin = "2023-03-15"; // Check in data in YYYY-MM-DD format
+$checkout = "2023-03-16"; // Check out data in YYYY-MM-DD format
+$currency = "USD"; // Currency code - example (USD)
+$guest_nationality = "US"; // Guest nationality ISO-2 code - example (SG)
+$adults = 1; // Number of adult guests staying
+$children = "12,9"; // Number of children staying if any
+$guest_id = "testtraveler1"; // Unique traveler ID if available
 
 try {
     $result = $apiInstance->getHotels(
         hotel_ids: $hotel_ids, 
         checkin: $checkin, 
         checkout: $checkout, 
-        country: $country, 
-        adults: $adults, 
         currency: $currency, 
         guest_nationality: $guest_nationality, 
-        latitude: $latitude, 
-        longitude: $longitude, 
-        distance: $distance, 
+        adults: $adults, 
         children: $children, 
-        traveler_id: $traveler_id
+        guest_id: $guest_id
     );
     print_r($result->$getData());
     print_r($result->$getGuestLevel());
     print_r($result->$getSandbox());
-    print_r($result->$getSessionId());
 } catch (\Exception $e) {
     echo 'Exception when calling SearchApi->getHotels: ', $e->getMessage(), PHP_EOL;
 }
@@ -167,18 +160,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **hotel_ids** | **string**| hotel ids separated by comma, max number of hotel ids is 10, example (2345,557,56) | |
-| **checkin** | **\DateTime**|  | |
-| **checkout** | **\DateTime**|  | |
-| **country** | **string**|  | |
-| **adults** | **int**|  | |
-| **currency** | **string**|  | |
-| **guest_nationality** | **string**|  | |
-| **latitude** | **float**|  | [optional] |
-| **longitude** | **float**|  | [optional] |
-| **distance** | **int**|  | [optional] |
-| **children** | **string**|  | [optional] |
-| **traveler_id** | **string**|  | [optional] |
+| **hotel_ids** | **string**| List of hotelIds | |
+| **checkin** | **string**| Check in data in YYYY-MM-DD format | |
+| **checkout** | **string**| Check out data in YYYY-MM-DD format | |
+| **currency** | **string**| Currency code - example (USD) | |
+| **guest_nationality** | **string**| Guest nationality ISO-2 code - example (SG) | |
+| **adults** | **int**| Number of adult guests staying | |
+| **children** | **string**| Number of children staying if any | [optional] |
+| **guest_id** | **string**| Unique traveler ID if available | [optional] |
 
 ### Return type
 
@@ -186,7 +175,7 @@ try {
 
 ### Authorization
 
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
+[apikeyAuth](../../README.md#apikeyAuth)
 
 ### HTTP request headers
 

@@ -1,6 +1,6 @@
 # Nuitee\BookingManagementApi
 
-All URIs are relative to https://api.nlite.ml/v1.0, except if the operation defines another base path.
+All URIs are relative to https://api.liteapi.travel/v1.0, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -17,7 +17,7 @@ cancel($booking_id): \Nuitee\Model\CancelResponse
 
 Booking cancel
 
-This endpoint allows you to cancel a booking based on a booking ID. The refund amount is based on the cancellation policies. <!-- theme: danger -->
+<!-- theme: danger --> This API is used to request a cancellation of an existing confirmed booking. Cancellation policies and conditions will be used to determine the success of the cancellation. For example a booking with non-refundable (NRFN) tag or a booking with a cancellation policy that was requested past the cancellation date will not be able to cancel the confirmed booking.
 
 ### Example
 
@@ -25,10 +25,13 @@ This endpoint allows you to cancel a booking based on a booking ID. The refund a
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: ApiKeyAuth
+// Configure API key authorization: apikeyAuth
 $config = Nuitee\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Nuitee\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+// Setting host path is optional and defaults to https://api.liteapi.travel/v1.0
+// Nuitee\Configuration::getDefaultConfiguration()->setHost("https://api.liteapi.travel/v1.0");
 
 $apiInstance = new Nuitee\Api\BookingManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -37,17 +40,14 @@ $apiInstance = new Nuitee\Api\BookingManagementApi(
     $config
 );
 
-$booking_id = "SEMkJ9lNM";
+$booking_id = "hSq2gVDrf"; // (Required) The unique identifier of the booking you would like to update.
 
 try {
     $result = $apiInstance->cancel(
         booking_id: $booking_id
     );
-    print_r($result->$getBookingId());
-    print_r($result->$getCancellationFee());
-    print_r($result->$getCurrency());
-    print_r($result->$getRefundAmount());
-    print_r($result->$getStatus());
+    print_r($result->$getData());
+    print_r($result->$getSandbox());
 } catch (\Exception $e) {
     echo 'Exception when calling BookingManagementApi->cancel: ', $e->getMessage(), PHP_EOL;
 }
@@ -65,7 +65,7 @@ try {
 
 ### Authorization
 
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
+[apikeyAuth](../../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -84,7 +84,7 @@ listBookings($guest_id): \Nuitee\Model\ListBookingsResponse
 
 Booking list
 
-List bookings by guestId
+The API returns the list of booking Id's for a given guest Id.
 
 ### Example
 
@@ -92,10 +92,13 @@ List bookings by guestId
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: ApiKeyAuth
+// Configure API key authorization: apikeyAuth
 $config = Nuitee\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Nuitee\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+// Setting host path is optional and defaults to https://api.liteapi.travel/v1.0
+// Nuitee\Configuration::getDefaultConfiguration()->setHost("https://api.liteapi.travel/v1.0");
 
 $apiInstance = new Nuitee\Api\BookingManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -104,7 +107,7 @@ $apiInstance = new Nuitee\Api\BookingManagementApi(
     $config
 );
 
-$guest_id = "guestId_example";
+$guest_id = "FrT56hfty"; // The Guest Id of the user
 
 try {
     $result = $apiInstance->listBookings(
@@ -120,7 +123,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **guest_id** | **string**| guest id of bookings | |
+| **guest_id** | **string**| The Guest Id of the user | |
 
 ### Return type
 
@@ -128,7 +131,7 @@ try {
 
 ### Authorization
 
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
+[apikeyAuth](../../README.md#apikeyAuth)
 
 ### HTTP request headers
 
@@ -147,7 +150,7 @@ retrieve($booking_id): \Nuitee\Model\RetrieveResponse
 
 Booking retrieve
 
-This endpoint allows you to retrieve all the information for specific booking ID.
+The API returns the status and the details for the a specific booking Id.
 
 ### Example
 
@@ -155,10 +158,13 @@ This endpoint allows you to retrieve all the information for specific booking ID
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: ApiKeyAuth
+// Configure API key authorization: apikeyAuth
 $config = Nuitee\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Nuitee\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+// Setting host path is optional and defaults to https://api.liteapi.travel/v1.0
+// Nuitee\Configuration::getDefaultConfiguration()->setHost("https://api.liteapi.travel/v1.0");
 
 $apiInstance = new Nuitee\Api\BookingManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -167,7 +173,7 @@ $apiInstance = new Nuitee\Api\BookingManagementApi(
     $config
 );
 
-$booking_id = "SEMkJ9lNM";
+$booking_id = " hSq2gVDrf"; // The Booking Id that needs to be retrieved
 
 try {
     $result = $apiInstance->retrieve(
@@ -183,7 +189,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **booking_id** | **string**| (Required) The unique identifier of the booking you would like to update. | |
+| **booking_id** | **string**| The Booking Id that needs to be retrieved | |
 
 ### Return type
 
@@ -191,7 +197,7 @@ try {
 
 ### Authorization
 
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
+[apikeyAuth](../../README.md#apikeyAuth)
 
 ### HTTP request headers
 

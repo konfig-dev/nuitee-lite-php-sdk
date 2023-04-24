@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cancel_policy_infos** | [**\Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolicyInfosInner[]**](PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolicyInfosInner.md) |  | [optional]
+**cancel_policy_infos** | [**\Nuitee\Model\RetrieveResponseDataCancellationPoliciesCancelPolicyInfos**](RetrieveResponseDataCancellationPoliciesCancelPolicyInfos.md) |  | [optional]
 **hotel_remarks** | **string** |  | [optional]
 **refundable_tag** | **string** |  | [optional]
 

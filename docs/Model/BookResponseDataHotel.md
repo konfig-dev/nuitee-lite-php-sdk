@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hotel_id** | **string** |  | [optional]
 **name** | **string** |  | [optional]
-**star_rating** | **int** |  | [optional]
+**star_rating** | **float** |  | [optional]
 **address** | [**\Nuitee\Model\BookResponseDataHotelAddress**](BookResponseDataHotelAddress.md) |  | [optional]
 **location** | [**\Nuitee\Model\BookResponseDataHotelLocation**](BookResponseDataHotelLocation.md) |  | [optional]
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **rate_id** | **string** |  | [optional]
 **name** | **string** |  | [optional]
-**max_occupancy** | **int** |  | [optional]
+**max_occupancy** | **float** |  | [optional]
 **retail_rate** | [**\Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerRetailRate**](PrebookResponseDataRoomTypesInnerRatesInnerRetailRate.md) |  | [optional]
 **cancellation_policies** | [**\Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerCancellationPolicies**](PrebookResponseDataRoomTypesInnerRatesInnerCancellationPolicies.md) |  | [optional]
 

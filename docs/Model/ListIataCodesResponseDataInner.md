@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **string** | IATA code | [optional]
-**name** | **string** | IATA location name | [optional]
+**code** | **string** |  | [optional]
+**name** | **string** |  | [optional]
 **latitude** | **float** |  | [optional]
 **longitude** | **float** |  | [optional]
-**country_code** | **string** | country code | [optional]
+**country_code** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
