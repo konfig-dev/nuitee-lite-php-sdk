@@ -72,18 +72,18 @@ class BookResponseDataBookedRoomsInnerRateTest extends TestCase
     }
 
     /**
-     * Test attribute "rate_id"
+     * Test attribute "max_occupancy"
      */
-    public function testPropertyRateId()
+    public function testPropertyMaxOccupancy()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "max_occupancy"
+     * Test attribute "rate_id"
      */
-    public function testPropertyMaxOccupancy()
+    public function testPropertyRateId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

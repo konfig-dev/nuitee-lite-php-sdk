@@ -49,8 +49,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolic
       * @var string[]
       */
     protected static $openAPITypes = [
-        'cancel_time' => 'string',
         'amount' => 'float',
+        'cancel_time' => 'string',
         'type' => 'string'
     ];
 
@@ -62,8 +62,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolic
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'cancel_time' => null,
         'amount' => null,
+        'cancel_time' => null,
         'type' => null
     ];
 
@@ -73,8 +73,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolic
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'cancel_time' => false,
-		'amount' => false,
+        'amount' => false,
+		'cancel_time' => false,
 		'type' => false
     ];
 
@@ -164,8 +164,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolic
      * @var string[]
      */
     protected static $attributeMap = [
-        'cancel_time' => 'cancelTime',
         'amount' => 'amount',
+        'cancel_time' => 'cancelTime',
         'type' => 'type'
     ];
 
@@ -175,8 +175,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolic
      * @var string[]
      */
     protected static $setters = [
-        'cancel_time' => 'setCancelTime',
         'amount' => 'setAmount',
+        'cancel_time' => 'setCancelTime',
         'type' => 'setType'
     ];
 
@@ -186,8 +186,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolic
      * @var string[]
      */
     protected static $getters = [
-        'cancel_time' => 'getCancelTime',
         'amount' => 'getAmount',
+        'cancel_time' => 'getCancelTime',
         'type' => 'getType'
     ];
 
@@ -248,8 +248,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolic
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('cancel_time', $data ?? [], null);
         $this->setIfExists('amount', $data ?? [], null);
+        $this->setIfExists('cancel_time', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
     }
 
@@ -296,35 +296,6 @@ class PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolic
 
 
     /**
-     * Gets cancel_time
-     *
-     * @return string|null
-     */
-    public function getCancelTime()
-    {
-        return $this->container['cancel_time'];
-    }
-
-    /**
-     * Sets cancel_time
-     *
-     * @param string|null $cancel_time cancel_time
-     *
-     * @return self
-     */
-    public function setCancelTime($cancel_time)
-    {
-
-        if (is_null($cancel_time)) {
-            throw new \InvalidArgumentException('non-nullable cancel_time cannot be null');
-        }
-
-        $this->container['cancel_time'] = $cancel_time;
-
-        return $this;
-    }
-
-    /**
      * Gets amount
      *
      * @return float|null
@@ -349,6 +320,35 @@ class PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolic
         }
 
         $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancel_time
+     *
+     * @return string|null
+     */
+    public function getCancelTime()
+    {
+        return $this->container['cancel_time'];
+    }
+
+    /**
+     * Sets cancel_time
+     *
+     * @param string|null $cancel_time cancel_time
+     *
+     * @return self
+     */
+    public function setCancelTime($cancel_time)
+    {
+
+        if (is_null($cancel_time)) {
+            throw new \InvalidArgumentException('non-nullable cancel_time cannot be null');
+        }
+
+        $this->container['cancel_time'] = $cancel_time;
 
         return $this;
     }

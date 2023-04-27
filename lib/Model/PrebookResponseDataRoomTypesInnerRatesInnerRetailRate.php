@@ -49,8 +49,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerRetailRate implements ModelInte
       * @var string[]
       */
     protected static $openAPITypes = [
-        'total' => '\Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerRetailRateTotalInner[]',
-        'taxes_and_fees' => 'string'
+        'taxes_and_fees' => 'string',
+        'total' => '\Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerRetailRateTotalInner[]'
     ];
 
     /**
@@ -61,8 +61,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerRetailRate implements ModelInte
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'total' => null,
-        'taxes_and_fees' => null
+        'taxes_and_fees' => null,
+        'total' => null
     ];
 
     /**
@@ -71,8 +71,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerRetailRate implements ModelInte
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'total' => false,
-		'taxes_and_fees' => true
+        'taxes_and_fees' => true,
+		'total' => false
     ];
 
     /**
@@ -161,8 +161,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerRetailRate implements ModelInte
      * @var string[]
      */
     protected static $attributeMap = [
-        'total' => 'total',
-        'taxes_and_fees' => 'taxesAndFees'
+        'taxes_and_fees' => 'taxesAndFees',
+        'total' => 'total'
     ];
 
     /**
@@ -171,8 +171,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerRetailRate implements ModelInte
      * @var string[]
      */
     protected static $setters = [
-        'total' => 'setTotal',
-        'taxes_and_fees' => 'setTaxesAndFees'
+        'taxes_and_fees' => 'setTaxesAndFees',
+        'total' => 'setTotal'
     ];
 
     /**
@@ -181,8 +181,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerRetailRate implements ModelInte
      * @var string[]
      */
     protected static $getters = [
-        'total' => 'getTotal',
-        'taxes_and_fees' => 'getTaxesAndFees'
+        'taxes_and_fees' => 'getTaxesAndFees',
+        'total' => 'getTotal'
     ];
 
     /**
@@ -242,8 +242,8 @@ class PrebookResponseDataRoomTypesInnerRatesInnerRetailRate implements ModelInte
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('total', $data ?? [], null);
         $this->setIfExists('taxes_and_fees', $data ?? [], null);
+        $this->setIfExists('total', $data ?? [], null);
     }
 
     /**
@@ -289,35 +289,6 @@ class PrebookResponseDataRoomTypesInnerRatesInnerRetailRate implements ModelInte
 
 
     /**
-     * Gets total
-     *
-     * @return \Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerRetailRateTotalInner[]|null
-     */
-    public function getTotal()
-    {
-        return $this->container['total'];
-    }
-
-    /**
-     * Sets total
-     *
-     * @param \Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerRetailRateTotalInner[]|null $total total
-     *
-     * @return self
-     */
-    public function setTotal($total)
-    {
-
-        if (is_null($total)) {
-            throw new \InvalidArgumentException('non-nullable total cannot be null');
-        }
-
-        $this->container['total'] = $total;
-
-        return $this;
-    }
-
-    /**
      * Gets taxes_and_fees
      *
      * @return string|null
@@ -349,6 +320,35 @@ class PrebookResponseDataRoomTypesInnerRatesInnerRetailRate implements ModelInte
         }
 
         $this->container['taxes_and_fees'] = $taxes_and_fees;
+
+        return $this;
+    }
+
+    /**
+     * Gets total
+     *
+     * @return \Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerRetailRateTotalInner[]|null
+     */
+    public function getTotal()
+    {
+        return $this->container['total'];
+    }
+
+    /**
+     * Sets total
+     *
+     * @param \Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerRetailRateTotalInner[]|null $total total
+     *
+     * @return self
+     */
+    public function setTotal($total)
+    {
+
+        if (is_null($total)) {
+            throw new \InvalidArgumentException('non-nullable total cannot be null');
+        }
+
+        $this->container['total'] = $total;
 
         return $this;
     }

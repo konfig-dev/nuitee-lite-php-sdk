@@ -72,18 +72,18 @@ class PrebookResponseDataRoomTypesInnerRatesInnerCancellationPoliciesCancelPolic
     }
 
     /**
-     * Test attribute "cancel_time"
+     * Test attribute "amount"
      */
-    public function testPropertyCancelTime()
+    public function testPropertyAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "cancel_time"
      */
-    public function testPropertyAmount()
+    public function testPropertyCancelTime()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

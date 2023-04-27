@@ -49,15 +49,15 @@ class PrebookResponseData implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'prebook_id' => 'string',
-        'hotel_id' => 'string',
+        'board_changed' => 'bool',
+        'cancellation_changed' => 'bool',
         'currency' => 'string',
-        'terms_and_conditions' => 'string',
-        'room_types' => '\Nuitee\Model\PrebookResponseDataRoomTypesInner[]',
+        'hotel_id' => 'string',
+        'prebook_id' => 'string',
         'price' => 'float',
         'price_difference_percent' => 'float',
-        'cancellation_changed' => 'bool',
-        'board_changed' => 'bool'
+        'room_types' => '\Nuitee\Model\PrebookResponseDataRoomTypesInner[]',
+        'terms_and_conditions' => 'string'
     ];
 
     /**
@@ -68,15 +68,15 @@ class PrebookResponseData implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'prebook_id' => null,
-        'hotel_id' => null,
+        'board_changed' => null,
+        'cancellation_changed' => null,
         'currency' => null,
-        'terms_and_conditions' => null,
-        'room_types' => null,
+        'hotel_id' => null,
+        'prebook_id' => null,
         'price' => null,
         'price_difference_percent' => null,
-        'cancellation_changed' => null,
-        'board_changed' => null
+        'room_types' => null,
+        'terms_and_conditions' => null
     ];
 
     /**
@@ -85,15 +85,15 @@ class PrebookResponseData implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'prebook_id' => false,
-		'hotel_id' => false,
+        'board_changed' => false,
+		'cancellation_changed' => false,
 		'currency' => false,
-		'terms_and_conditions' => false,
-		'room_types' => false,
+		'hotel_id' => false,
+		'prebook_id' => false,
 		'price' => false,
 		'price_difference_percent' => false,
-		'cancellation_changed' => false,
-		'board_changed' => false
+		'room_types' => false,
+		'terms_and_conditions' => false
     ];
 
     /**
@@ -182,15 +182,15 @@ class PrebookResponseData implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'prebook_id' => 'prebookId',
-        'hotel_id' => 'hotelId',
+        'board_changed' => 'boardChanged',
+        'cancellation_changed' => 'cancellationChanged',
         'currency' => 'currency',
-        'terms_and_conditions' => 'termsAndConditions',
-        'room_types' => 'roomTypes',
+        'hotel_id' => 'hotelId',
+        'prebook_id' => 'prebookId',
         'price' => 'price',
         'price_difference_percent' => 'priceDifferencePercent',
-        'cancellation_changed' => 'cancellationChanged',
-        'board_changed' => 'boardChanged'
+        'room_types' => 'roomTypes',
+        'terms_and_conditions' => 'termsAndConditions'
     ];
 
     /**
@@ -199,15 +199,15 @@ class PrebookResponseData implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'prebook_id' => 'setPrebookId',
-        'hotel_id' => 'setHotelId',
+        'board_changed' => 'setBoardChanged',
+        'cancellation_changed' => 'setCancellationChanged',
         'currency' => 'setCurrency',
-        'terms_and_conditions' => 'setTermsAndConditions',
-        'room_types' => 'setRoomTypes',
+        'hotel_id' => 'setHotelId',
+        'prebook_id' => 'setPrebookId',
         'price' => 'setPrice',
         'price_difference_percent' => 'setPriceDifferencePercent',
-        'cancellation_changed' => 'setCancellationChanged',
-        'board_changed' => 'setBoardChanged'
+        'room_types' => 'setRoomTypes',
+        'terms_and_conditions' => 'setTermsAndConditions'
     ];
 
     /**
@@ -216,15 +216,15 @@ class PrebookResponseData implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'prebook_id' => 'getPrebookId',
-        'hotel_id' => 'getHotelId',
+        'board_changed' => 'getBoardChanged',
+        'cancellation_changed' => 'getCancellationChanged',
         'currency' => 'getCurrency',
-        'terms_and_conditions' => 'getTermsAndConditions',
-        'room_types' => 'getRoomTypes',
+        'hotel_id' => 'getHotelId',
+        'prebook_id' => 'getPrebookId',
         'price' => 'getPrice',
         'price_difference_percent' => 'getPriceDifferencePercent',
-        'cancellation_changed' => 'getCancellationChanged',
-        'board_changed' => 'getBoardChanged'
+        'room_types' => 'getRoomTypes',
+        'terms_and_conditions' => 'getTermsAndConditions'
     ];
 
     /**
@@ -284,15 +284,15 @@ class PrebookResponseData implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('prebook_id', $data ?? [], null);
-        $this->setIfExists('hotel_id', $data ?? [], null);
+        $this->setIfExists('board_changed', $data ?? [], null);
+        $this->setIfExists('cancellation_changed', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
-        $this->setIfExists('terms_and_conditions', $data ?? [], null);
-        $this->setIfExists('room_types', $data ?? [], null);
+        $this->setIfExists('hotel_id', $data ?? [], null);
+        $this->setIfExists('prebook_id', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('price_difference_percent', $data ?? [], null);
-        $this->setIfExists('cancellation_changed', $data ?? [], null);
-        $this->setIfExists('board_changed', $data ?? [], null);
+        $this->setIfExists('room_types', $data ?? [], null);
+        $this->setIfExists('terms_and_conditions', $data ?? [], null);
     }
 
     /**
@@ -338,59 +338,59 @@ class PrebookResponseData implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets prebook_id
+     * Gets board_changed
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getPrebookId()
+    public function getBoardChanged()
     {
-        return $this->container['prebook_id'];
+        return $this->container['board_changed'];
     }
 
     /**
-     * Sets prebook_id
+     * Sets board_changed
      *
-     * @param string|null $prebook_id prebook_id
+     * @param bool|null $board_changed board_changed
      *
      * @return self
      */
-    public function setPrebookId($prebook_id)
+    public function setBoardChanged($board_changed)
     {
 
-        if (is_null($prebook_id)) {
-            throw new \InvalidArgumentException('non-nullable prebook_id cannot be null');
+        if (is_null($board_changed)) {
+            throw new \InvalidArgumentException('non-nullable board_changed cannot be null');
         }
 
-        $this->container['prebook_id'] = $prebook_id;
+        $this->container['board_changed'] = $board_changed;
 
         return $this;
     }
 
     /**
-     * Gets hotel_id
+     * Gets cancellation_changed
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getHotelId()
+    public function getCancellationChanged()
     {
-        return $this->container['hotel_id'];
+        return $this->container['cancellation_changed'];
     }
 
     /**
-     * Sets hotel_id
+     * Sets cancellation_changed
      *
-     * @param string|null $hotel_id hotel_id
+     * @param bool|null $cancellation_changed cancellation_changed
      *
      * @return self
      */
-    public function setHotelId($hotel_id)
+    public function setCancellationChanged($cancellation_changed)
     {
 
-        if (is_null($hotel_id)) {
-            throw new \InvalidArgumentException('non-nullable hotel_id cannot be null');
+        if (is_null($cancellation_changed)) {
+            throw new \InvalidArgumentException('non-nullable cancellation_changed cannot be null');
         }
 
-        $this->container['hotel_id'] = $hotel_id;
+        $this->container['cancellation_changed'] = $cancellation_changed;
 
         return $this;
     }
@@ -425,59 +425,59 @@ class PrebookResponseData implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets terms_and_conditions
+     * Gets hotel_id
      *
      * @return string|null
      */
-    public function getTermsAndConditions()
+    public function getHotelId()
     {
-        return $this->container['terms_and_conditions'];
+        return $this->container['hotel_id'];
     }
 
     /**
-     * Sets terms_and_conditions
+     * Sets hotel_id
      *
-     * @param string|null $terms_and_conditions terms_and_conditions
+     * @param string|null $hotel_id hotel_id
      *
      * @return self
      */
-    public function setTermsAndConditions($terms_and_conditions)
+    public function setHotelId($hotel_id)
     {
 
-        if (is_null($terms_and_conditions)) {
-            throw new \InvalidArgumentException('non-nullable terms_and_conditions cannot be null');
+        if (is_null($hotel_id)) {
+            throw new \InvalidArgumentException('non-nullable hotel_id cannot be null');
         }
 
-        $this->container['terms_and_conditions'] = $terms_and_conditions;
+        $this->container['hotel_id'] = $hotel_id;
 
         return $this;
     }
 
     /**
-     * Gets room_types
+     * Gets prebook_id
      *
-     * @return \Nuitee\Model\PrebookResponseDataRoomTypesInner[]|null
+     * @return string|null
      */
-    public function getRoomTypes()
+    public function getPrebookId()
     {
-        return $this->container['room_types'];
+        return $this->container['prebook_id'];
     }
 
     /**
-     * Sets room_types
+     * Sets prebook_id
      *
-     * @param \Nuitee\Model\PrebookResponseDataRoomTypesInner[]|null $room_types room_types
+     * @param string|null $prebook_id prebook_id
      *
      * @return self
      */
-    public function setRoomTypes($room_types)
+    public function setPrebookId($prebook_id)
     {
 
-        if (is_null($room_types)) {
-            throw new \InvalidArgumentException('non-nullable room_types cannot be null');
+        if (is_null($prebook_id)) {
+            throw new \InvalidArgumentException('non-nullable prebook_id cannot be null');
         }
 
-        $this->container['room_types'] = $room_types;
+        $this->container['prebook_id'] = $prebook_id;
 
         return $this;
     }
@@ -541,59 +541,59 @@ class PrebookResponseData implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets cancellation_changed
+     * Gets room_types
      *
-     * @return bool|null
+     * @return \Nuitee\Model\PrebookResponseDataRoomTypesInner[]|null
      */
-    public function getCancellationChanged()
+    public function getRoomTypes()
     {
-        return $this->container['cancellation_changed'];
+        return $this->container['room_types'];
     }
 
     /**
-     * Sets cancellation_changed
+     * Sets room_types
      *
-     * @param bool|null $cancellation_changed cancellation_changed
+     * @param \Nuitee\Model\PrebookResponseDataRoomTypesInner[]|null $room_types room_types
      *
      * @return self
      */
-    public function setCancellationChanged($cancellation_changed)
+    public function setRoomTypes($room_types)
     {
 
-        if (is_null($cancellation_changed)) {
-            throw new \InvalidArgumentException('non-nullable cancellation_changed cannot be null');
+        if (is_null($room_types)) {
+            throw new \InvalidArgumentException('non-nullable room_types cannot be null');
         }
 
-        $this->container['cancellation_changed'] = $cancellation_changed;
+        $this->container['room_types'] = $room_types;
 
         return $this;
     }
 
     /**
-     * Gets board_changed
+     * Gets terms_and_conditions
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getBoardChanged()
+    public function getTermsAndConditions()
     {
-        return $this->container['board_changed'];
+        return $this->container['terms_and_conditions'];
     }
 
     /**
-     * Sets board_changed
+     * Sets terms_and_conditions
      *
-     * @param bool|null $board_changed board_changed
+     * @param string|null $terms_and_conditions terms_and_conditions
      *
      * @return self
      */
-    public function setBoardChanged($board_changed)
+    public function setTermsAndConditions($terms_and_conditions)
     {
 
-        if (is_null($board_changed)) {
-            throw new \InvalidArgumentException('non-nullable board_changed cannot be null');
+        if (is_null($terms_and_conditions)) {
+            throw new \InvalidArgumentException('non-nullable terms_and_conditions cannot be null');
         }
 
-        $this->container['board_changed'] = $board_changed;
+        $this->container['terms_and_conditions'] = $terms_and_conditions;
 
         return $this;
     }

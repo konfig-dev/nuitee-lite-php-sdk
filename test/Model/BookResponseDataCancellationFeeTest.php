@@ -72,15 +72,6 @@ class BookResponseDataCancellationFeeTest extends TestCase
     }
 
     /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "count"
      */
     public function testPropertyCount()
@@ -93,6 +84,15 @@ class BookResponseDataCancellationFeeTest extends TestCase
      * Test attribute "price"
      */
     public function testPropertyPrice()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

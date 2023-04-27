@@ -49,8 +49,8 @@ class BookResponseDataBookedRoomsInnerRate implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
-        'rate_id' => 'string',
         'max_occupancy' => 'float',
+        'rate_id' => 'string',
         'retail_rate' => '\Nuitee\Model\BookResponseDataBookedRoomsInnerRateRetailRate'
     ];
 
@@ -62,8 +62,8 @@ class BookResponseDataBookedRoomsInnerRate implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'rate_id' => null,
         'max_occupancy' => null,
+        'rate_id' => null,
         'retail_rate' => null
     ];
 
@@ -73,8 +73,8 @@ class BookResponseDataBookedRoomsInnerRate implements ModelInterface, ArrayAcces
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'rate_id' => false,
-		'max_occupancy' => false,
+        'max_occupancy' => false,
+		'rate_id' => false,
 		'retail_rate' => false
     ];
 
@@ -164,8 +164,8 @@ class BookResponseDataBookedRoomsInnerRate implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
-        'rate_id' => 'rateId',
         'max_occupancy' => 'maxOccupancy',
+        'rate_id' => 'rateId',
         'retail_rate' => 'retailRate'
     ];
 
@@ -175,8 +175,8 @@ class BookResponseDataBookedRoomsInnerRate implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
-        'rate_id' => 'setRateId',
         'max_occupancy' => 'setMaxOccupancy',
+        'rate_id' => 'setRateId',
         'retail_rate' => 'setRetailRate'
     ];
 
@@ -186,8 +186,8 @@ class BookResponseDataBookedRoomsInnerRate implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
-        'rate_id' => 'getRateId',
         'max_occupancy' => 'getMaxOccupancy',
+        'rate_id' => 'getRateId',
         'retail_rate' => 'getRetailRate'
     ];
 
@@ -248,8 +248,8 @@ class BookResponseDataBookedRoomsInnerRate implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('rate_id', $data ?? [], null);
         $this->setIfExists('max_occupancy', $data ?? [], null);
+        $this->setIfExists('rate_id', $data ?? [], null);
         $this->setIfExists('retail_rate', $data ?? [], null);
     }
 
@@ -296,35 +296,6 @@ class BookResponseDataBookedRoomsInnerRate implements ModelInterface, ArrayAcces
 
 
     /**
-     * Gets rate_id
-     *
-     * @return string|null
-     */
-    public function getRateId()
-    {
-        return $this->container['rate_id'];
-    }
-
-    /**
-     * Sets rate_id
-     *
-     * @param string|null $rate_id rate_id
-     *
-     * @return self
-     */
-    public function setRateId($rate_id)
-    {
-
-        if (is_null($rate_id)) {
-            throw new \InvalidArgumentException('non-nullable rate_id cannot be null');
-        }
-
-        $this->container['rate_id'] = $rate_id;
-
-        return $this;
-    }
-
-    /**
      * Gets max_occupancy
      *
      * @return float|null
@@ -349,6 +320,35 @@ class BookResponseDataBookedRoomsInnerRate implements ModelInterface, ArrayAcces
         }
 
         $this->container['max_occupancy'] = $max_occupancy;
+
+        return $this;
+    }
+
+    /**
+     * Gets rate_id
+     *
+     * @return string|null
+     */
+    public function getRateId()
+    {
+        return $this->container['rate_id'];
+    }
+
+    /**
+     * Sets rate_id
+     *
+     * @param string|null $rate_id rate_id
+     *
+     * @return self
+     */
+    public function setRateId($rate_id)
+    {
+
+        if (is_null($rate_id)) {
+            throw new \InvalidArgumentException('non-nullable rate_id cannot be null');
+        }
+
+        $this->container['rate_id'] = $rate_id;
 
         return $this;
     }

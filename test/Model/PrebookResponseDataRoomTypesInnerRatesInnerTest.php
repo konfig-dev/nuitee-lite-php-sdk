@@ -72,18 +72,9 @@ class PrebookResponseDataRoomTypesInnerRatesInnerTest extends TestCase
     }
 
     /**
-     * Test attribute "rate_id"
+     * Test attribute "cancellation_policies"
      */
-    public function testPropertyRateId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
+    public function testPropertyCancellationPolicies()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -99,18 +90,27 @@ class PrebookResponseDataRoomTypesInnerRatesInnerTest extends TestCase
     }
 
     /**
-     * Test attribute "retail_rate"
+     * Test attribute "name"
      */
-    public function testPropertyRetailRate()
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "cancellation_policies"
+     * Test attribute "rate_id"
      */
-    public function testPropertyCancellationPolicies()
+    public function testPropertyRateId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "retail_rate"
+     */
+    public function testPropertyRetailRate()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

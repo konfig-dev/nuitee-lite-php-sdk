@@ -72,45 +72,9 @@ class BookResponseDataHotelAddressTest extends TestCase
     }
 
     /**
-     * Test attribute "line1"
-     */
-    public function testPropertyLine1()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "line2"
-     */
-    public function testPropertyLine2()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "city"
      */
     public function testPropertyCity()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "postal_code"
-     */
-    public function testPropertyPostalCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "region"
-     */
-    public function testPropertyRegion()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -129,6 +93,42 @@ class BookResponseDataHotelAddressTest extends TestCase
      * Test attribute "country_name"
      */
     public function testPropertyCountryName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "line1"
+     */
+    public function testPropertyLine1()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "line2"
+     */
+    public function testPropertyLine2()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "postal_code"
+     */
+    public function testPropertyPostalCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "region"
+     */
+    public function testPropertyRegion()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

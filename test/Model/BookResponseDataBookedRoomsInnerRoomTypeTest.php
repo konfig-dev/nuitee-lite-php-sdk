@@ -72,18 +72,18 @@ class BookResponseDataBookedRoomsInnerRoomTypeTest extends TestCase
     }
 
     /**
-     * Test attribute "room_type_id"
+     * Test attribute "name"
      */
-    public function testPropertyRoomTypeId()
+    public function testPropertyName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "room_type_id"
      */
-    public function testPropertyName()
+    public function testPropertyRoomTypeId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

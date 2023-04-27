@@ -49,9 +49,9 @@ class BookResponseDataGuestInfo implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
+        'guest_email' => 'string',
         'guest_first_name' => 'string',
-        'guest_last_name' => 'string',
-        'guest_email' => 'string'
+        'guest_last_name' => 'string'
     ];
 
     /**
@@ -62,9 +62,9 @@ class BookResponseDataGuestInfo implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'guest_email' => null,
         'guest_first_name' => null,
-        'guest_last_name' => null,
-        'guest_email' => null
+        'guest_last_name' => null
     ];
 
     /**
@@ -73,9 +73,9 @@ class BookResponseDataGuestInfo implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'guest_first_name' => false,
-		'guest_last_name' => false,
-		'guest_email' => false
+        'guest_email' => false,
+		'guest_first_name' => false,
+		'guest_last_name' => false
     ];
 
     /**
@@ -164,9 +164,9 @@ class BookResponseDataGuestInfo implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
+        'guest_email' => 'guestEmail',
         'guest_first_name' => 'guestFirstName',
-        'guest_last_name' => 'guestLastName',
-        'guest_email' => 'guestEmail'
+        'guest_last_name' => 'guestLastName'
     ];
 
     /**
@@ -175,9 +175,9 @@ class BookResponseDataGuestInfo implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
+        'guest_email' => 'setGuestEmail',
         'guest_first_name' => 'setGuestFirstName',
-        'guest_last_name' => 'setGuestLastName',
-        'guest_email' => 'setGuestEmail'
+        'guest_last_name' => 'setGuestLastName'
     ];
 
     /**
@@ -186,9 +186,9 @@ class BookResponseDataGuestInfo implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
+        'guest_email' => 'getGuestEmail',
         'guest_first_name' => 'getGuestFirstName',
-        'guest_last_name' => 'getGuestLastName',
-        'guest_email' => 'getGuestEmail'
+        'guest_last_name' => 'getGuestLastName'
     ];
 
     /**
@@ -248,9 +248,9 @@ class BookResponseDataGuestInfo implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('guest_email', $data ?? [], null);
         $this->setIfExists('guest_first_name', $data ?? [], null);
         $this->setIfExists('guest_last_name', $data ?? [], null);
-        $this->setIfExists('guest_email', $data ?? [], null);
     }
 
     /**
@@ -294,6 +294,35 @@ class BookResponseDataGuestInfo implements ModelInterface, ArrayAccess, \JsonSer
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets guest_email
+     *
+     * @return string|null
+     */
+    public function getGuestEmail()
+    {
+        return $this->container['guest_email'];
+    }
+
+    /**
+     * Sets guest_email
+     *
+     * @param string|null $guest_email guest_email
+     *
+     * @return self
+     */
+    public function setGuestEmail($guest_email)
+    {
+
+        if (is_null($guest_email)) {
+            throw new \InvalidArgumentException('non-nullable guest_email cannot be null');
+        }
+
+        $this->container['guest_email'] = $guest_email;
+
+        return $this;
+    }
 
     /**
      * Gets guest_first_name
@@ -349,35 +378,6 @@ class BookResponseDataGuestInfo implements ModelInterface, ArrayAccess, \JsonSer
         }
 
         $this->container['guest_last_name'] = $guest_last_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets guest_email
-     *
-     * @return string|null
-     */
-    public function getGuestEmail()
-    {
-        return $this->container['guest_email'];
-    }
-
-    /**
-     * Sets guest_email
-     *
-     * @param string|null $guest_email guest_email
-     *
-     * @return self
-     */
-    public function setGuestEmail($guest_email)
-    {
-
-        if (is_null($guest_email)) {
-            throw new \InvalidArgumentException('non-nullable guest_email cannot be null');
-        }
-
-        $this->container['guest_email'] = $guest_email;
 
         return $this;
     }

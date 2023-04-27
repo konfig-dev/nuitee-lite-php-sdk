@@ -39,9 +39,9 @@ $apiInstance = new Nuitee\Api\SearchApi(
     $config
 );
 
-$hotel_ids = "49117,49123"; // List of hotelIds
-$checkin = "2023-03-15"; // Check in data in YYYY-MM-DD format
-$checkout = "2023-03-16"; // Check out data in YYYY-MM-DD format
+$hotel_ids = "1000091,1000876,1001325,1001464,99249,99122,99121,99119,580014,1032513"; // List of hotelIds
+$checkin = "2023-11-15"; // Check in data in YYYY-MM-DD format
+$checkout = "2023-11-16"; // Check out data in YYYY-MM-DD format
 $guest_nationality = "US"; // Guest nationality ISO-2 code - example (SG)
 $currency = "USD"; // Currency code - example (USD)
 $adults = 1; // Number of adult guests staying
@@ -128,9 +128,9 @@ $apiInstance = new Nuitee\Api\SearchApi(
     $config
 );
 
-$hotel_ids = "49117,49123"; // List of hotelIds
-$checkin = "2023-03-15"; // Check in data in YYYY-MM-DD format
-$checkout = "2023-03-16"; // Check out data in YYYY-MM-DD format
+$hotel_ids = "1000091,1000876,1001325,1001464,99249,99122,99121,99119,580014,1032513"; // List of hotelIds
+$checkin = "2023-11-15"; // Check in data in YYYY-MM-DD format
+$checkout = "2023-11-16"; // Check out data in YYYY-MM-DD format
 $currency = "USD"; // Currency code - example (USD)
 $guest_nationality = "US"; // Guest nationality ISO-2 code - example (SG)
 $adults = 1; // Number of adult guests staying

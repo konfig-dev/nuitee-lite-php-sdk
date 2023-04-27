@@ -72,18 +72,18 @@ class PrebookResponseDataTest extends TestCase
     }
 
     /**
-     * Test attribute "prebook_id"
+     * Test attribute "board_changed"
      */
-    public function testPropertyPrebookId()
+    public function testPropertyBoardChanged()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "hotel_id"
+     * Test attribute "cancellation_changed"
      */
-    public function testPropertyHotelId()
+    public function testPropertyCancellationChanged()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -99,18 +99,18 @@ class PrebookResponseDataTest extends TestCase
     }
 
     /**
-     * Test attribute "terms_and_conditions"
+     * Test attribute "hotel_id"
      */
-    public function testPropertyTermsAndConditions()
+    public function testPropertyHotelId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "room_types"
+     * Test attribute "prebook_id"
      */
-    public function testPropertyRoomTypes()
+    public function testPropertyPrebookId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -135,18 +135,18 @@ class PrebookResponseDataTest extends TestCase
     }
 
     /**
-     * Test attribute "cancellation_changed"
+     * Test attribute "room_types"
      */
-    public function testPropertyCancellationChanged()
+    public function testPropertyRoomTypes()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "board_changed"
+     * Test attribute "terms_and_conditions"
      */
-    public function testPropertyBoardChanged()
+    public function testPropertyTermsAndConditions()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

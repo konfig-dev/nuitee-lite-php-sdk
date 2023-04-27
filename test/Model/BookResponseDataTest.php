@@ -72,78 +72,6 @@ class BookResponseDataTest extends TestCase
     }
 
     /**
-     * Test attribute "booking_id"
-     */
-    public function testPropertyBookingId()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "hotel_confirmation_code"
-     */
-    public function testPropertyHotelConfirmationCode()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "start"
-     */
-    public function testPropertyStart()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "checkin"
-     */
-    public function testPropertyCheckin()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "end"
-     */
-    public function testPropertyEnd()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "checkout"
-     */
-    public function testPropertyCheckout()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "hotel"
-     */
-    public function testPropertyHotel()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "booked_rooms"
      */
     public function testPropertyBookedRooms()
@@ -153,18 +81,9 @@ class BookResponseDataTest extends TestCase
     }
 
     /**
-     * Test attribute "guest_info"
+     * Test attribute "booking_id"
      */
-    public function testPropertyGuestInfo()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "created_at"
-     */
-    public function testPropertyCreatedAt()
+    public function testPropertyBookingId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -189,9 +108,90 @@ class BookResponseDataTest extends TestCase
     }
 
     /**
+     * Test attribute "checkin"
+     */
+    public function testPropertyCheckin()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "checkout"
+     */
+    public function testPropertyCheckout()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "created_at"
+     */
+    public function testPropertyCreatedAt()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "end"
+     */
+    public function testPropertyEnd()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "guest_info"
+     */
+    public function testPropertyGuestInfo()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "hotel"
+     */
+    public function testPropertyHotel()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "hotel_confirmation_code"
+     */
+    public function testPropertyHotelConfirmationCode()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "price"
      */
     public function testPropertyPrice()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "start"
+     */
+    public function testPropertyStart()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

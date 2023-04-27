@@ -49,13 +49,13 @@ class BookResponseDataHotelAddress implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
+        'city' => 'string',
+        'country' => 'string',
+        'country_name' => 'string',
         'line1' => 'string',
         'line2' => 'string',
-        'city' => 'string',
         'postal_code' => 'string',
-        'region' => 'string',
-        'country' => 'string',
-        'country_name' => 'string'
+        'region' => 'string'
     ];
 
     /**
@@ -66,13 +66,13 @@ class BookResponseDataHotelAddress implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'city' => null,
+        'country' => null,
+        'country_name' => null,
         'line1' => null,
         'line2' => null,
-        'city' => null,
         'postal_code' => null,
-        'region' => null,
-        'country' => null,
-        'country_name' => null
+        'region' => null
     ];
 
     /**
@@ -81,13 +81,13 @@ class BookResponseDataHotelAddress implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'line1' => false,
-		'line2' => false,
-		'city' => false,
-		'postal_code' => false,
-		'region' => false,
+        'city' => false,
 		'country' => false,
-		'country_name' => false
+		'country_name' => false,
+		'line1' => false,
+		'line2' => false,
+		'postal_code' => false,
+		'region' => false
     ];
 
     /**
@@ -176,13 +176,13 @@ class BookResponseDataHotelAddress implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
+        'city' => 'city',
+        'country' => 'country',
+        'country_name' => 'countryName',
         'line1' => 'line1',
         'line2' => 'line2',
-        'city' => 'city',
         'postal_code' => 'postalCode',
-        'region' => 'region',
-        'country' => 'country',
-        'country_name' => 'countryName'
+        'region' => 'region'
     ];
 
     /**
@@ -191,13 +191,13 @@ class BookResponseDataHotelAddress implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
+        'city' => 'setCity',
+        'country' => 'setCountry',
+        'country_name' => 'setCountryName',
         'line1' => 'setLine1',
         'line2' => 'setLine2',
-        'city' => 'setCity',
         'postal_code' => 'setPostalCode',
-        'region' => 'setRegion',
-        'country' => 'setCountry',
-        'country_name' => 'setCountryName'
+        'region' => 'setRegion'
     ];
 
     /**
@@ -206,13 +206,13 @@ class BookResponseDataHotelAddress implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
+        'city' => 'getCity',
+        'country' => 'getCountry',
+        'country_name' => 'getCountryName',
         'line1' => 'getLine1',
         'line2' => 'getLine2',
-        'city' => 'getCity',
         'postal_code' => 'getPostalCode',
-        'region' => 'getRegion',
-        'country' => 'getCountry',
-        'country_name' => 'getCountryName'
+        'region' => 'getRegion'
     ];
 
     /**
@@ -272,13 +272,13 @@ class BookResponseDataHotelAddress implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('line1', $data ?? [], null);
-        $this->setIfExists('line2', $data ?? [], null);
         $this->setIfExists('city', $data ?? [], null);
-        $this->setIfExists('postal_code', $data ?? [], null);
-        $this->setIfExists('region', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
         $this->setIfExists('country_name', $data ?? [], null);
+        $this->setIfExists('line1', $data ?? [], null);
+        $this->setIfExists('line2', $data ?? [], null);
+        $this->setIfExists('postal_code', $data ?? [], null);
+        $this->setIfExists('region', $data ?? [], null);
     }
 
     /**
@@ -322,6 +322,93 @@ class BookResponseDataHotelAddress implements ModelInterface, ArrayAccess, \Json
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets city
+     *
+     * @return string|null
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string|null $city city
+     *
+     * @return self
+     */
+    public function setCity($city)
+    {
+
+        if (is_null($city)) {
+            throw new \InvalidArgumentException('non-nullable city cannot be null');
+        }
+
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return string|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param string|null $country country
+     *
+     * @return self
+     */
+    public function setCountry($country)
+    {
+
+        if (is_null($country)) {
+            throw new \InvalidArgumentException('non-nullable country cannot be null');
+        }
+
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets country_name
+     *
+     * @return string|null
+     */
+    public function getCountryName()
+    {
+        return $this->container['country_name'];
+    }
+
+    /**
+     * Sets country_name
+     *
+     * @param string|null $country_name country_name
+     *
+     * @return self
+     */
+    public function setCountryName($country_name)
+    {
+
+        if (is_null($country_name)) {
+            throw new \InvalidArgumentException('non-nullable country_name cannot be null');
+        }
+
+        $this->container['country_name'] = $country_name;
+
+        return $this;
+    }
 
     /**
      * Gets line1
@@ -382,35 +469,6 @@ class BookResponseDataHotelAddress implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets city
-     *
-     * @return string|null
-     */
-    public function getCity()
-    {
-        return $this->container['city'];
-    }
-
-    /**
-     * Sets city
-     *
-     * @param string|null $city city
-     *
-     * @return self
-     */
-    public function setCity($city)
-    {
-
-        if (is_null($city)) {
-            throw new \InvalidArgumentException('non-nullable city cannot be null');
-        }
-
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
      * Gets postal_code
      *
      * @return string|null
@@ -464,64 +522,6 @@ class BookResponseDataHotelAddress implements ModelInterface, ArrayAccess, \Json
         }
 
         $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /**
-     * Gets country
-     *
-     * @return string|null
-     */
-    public function getCountry()
-    {
-        return $this->container['country'];
-    }
-
-    /**
-     * Sets country
-     *
-     * @param string|null $country country
-     *
-     * @return self
-     */
-    public function setCountry($country)
-    {
-
-        if (is_null($country)) {
-            throw new \InvalidArgumentException('non-nullable country cannot be null');
-        }
-
-        $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets country_name
-     *
-     * @return string|null
-     */
-    public function getCountryName()
-    {
-        return $this->container['country_name'];
-    }
-
-    /**
-     * Sets country_name
-     *
-     * @param string|null $country_name country_name
-     *
-     * @return self
-     */
-    public function setCountryName($country_name)
-    {
-
-        if (is_null($country_name)) {
-            throw new \InvalidArgumentException('non-nullable country_name cannot be null');
-        }
-
-        $this->container['country_name'] = $country_name;
 
         return $this;
     }

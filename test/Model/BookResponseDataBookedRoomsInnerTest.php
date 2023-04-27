@@ -72,15 +72,6 @@ class BookResponseDataBookedRoomsInnerTest extends TestCase
     }
 
     /**
-     * Test attribute "room_type"
-     */
-    public function testPropertyRoomType()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "adults"
      */
     public function testPropertyAdults()
@@ -102,6 +93,15 @@ class BookResponseDataBookedRoomsInnerTest extends TestCase
      * Test attribute "rate"
      */
     public function testPropertyRate()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "room_type"
+     */
+    public function testPropertyRoomType()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

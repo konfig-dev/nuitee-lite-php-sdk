@@ -49,20 +49,20 @@ class BookResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'booking_id' => 'string',
-        'status' => 'string',
-        'hotel_confirmation_code' => 'string',
-        'start' => 'string',
-        'checkin' => 'string',
-        'end' => 'string',
-        'checkout' => 'string',
-        'hotel' => '\Nuitee\Model\BookResponseDataHotel',
         'booked_rooms' => '\Nuitee\Model\BookResponseDataBookedRoomsInner[]',
-        'guest_info' => '\Nuitee\Model\BookResponseDataGuestInfo',
-        'created_at' => 'string',
+        'booking_id' => 'string',
         'cancellation' => '\Nuitee\Model\BookResponseDataCancellation',
         'cancellation_policies' => '\Nuitee\Model\BookResponseDataCancellationPolicies',
-        'price' => 'float'
+        'checkin' => 'string',
+        'checkout' => 'string',
+        'created_at' => 'string',
+        'end' => 'string',
+        'guest_info' => '\Nuitee\Model\BookResponseDataGuestInfo',
+        'hotel' => '\Nuitee\Model\BookResponseDataHotel',
+        'hotel_confirmation_code' => 'string',
+        'price' => 'float',
+        'start' => 'string',
+        'status' => 'string'
     ];
 
     /**
@@ -73,20 +73,20 @@ class BookResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'booking_id' => null,
-        'status' => null,
-        'hotel_confirmation_code' => null,
-        'start' => null,
-        'checkin' => null,
-        'end' => null,
-        'checkout' => null,
-        'hotel' => null,
         'booked_rooms' => null,
-        'guest_info' => null,
-        'created_at' => null,
+        'booking_id' => null,
         'cancellation' => null,
         'cancellation_policies' => null,
-        'price' => null
+        'checkin' => null,
+        'checkout' => null,
+        'created_at' => null,
+        'end' => null,
+        'guest_info' => null,
+        'hotel' => null,
+        'hotel_confirmation_code' => null,
+        'price' => null,
+        'start' => null,
+        'status' => null
     ];
 
     /**
@@ -95,20 +95,20 @@ class BookResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'booking_id' => false,
-		'status' => false,
-		'hotel_confirmation_code' => false,
-		'start' => false,
-		'checkin' => false,
-		'end' => false,
-		'checkout' => false,
-		'hotel' => false,
-		'booked_rooms' => false,
-		'guest_info' => false,
-		'created_at' => false,
+        'booked_rooms' => false,
+		'booking_id' => false,
 		'cancellation' => false,
 		'cancellation_policies' => false,
-		'price' => false
+		'checkin' => false,
+		'checkout' => false,
+		'created_at' => false,
+		'end' => false,
+		'guest_info' => false,
+		'hotel' => false,
+		'hotel_confirmation_code' => false,
+		'price' => false,
+		'start' => false,
+		'status' => false
     ];
 
     /**
@@ -197,20 +197,20 @@ class BookResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'booking_id' => 'bookingId',
-        'status' => 'status',
-        'hotel_confirmation_code' => 'hotelConfirmationCode',
-        'start' => 'start',
-        'checkin' => 'checkin',
-        'end' => 'end',
-        'checkout' => 'checkout',
-        'hotel' => 'hotel',
         'booked_rooms' => 'bookedRooms',
-        'guest_info' => 'guestInfo',
-        'created_at' => 'createdAt',
+        'booking_id' => 'bookingId',
         'cancellation' => 'cancellation',
         'cancellation_policies' => 'cancellationPolicies',
-        'price' => 'price'
+        'checkin' => 'checkin',
+        'checkout' => 'checkout',
+        'created_at' => 'createdAt',
+        'end' => 'end',
+        'guest_info' => 'guestInfo',
+        'hotel' => 'hotel',
+        'hotel_confirmation_code' => 'hotelConfirmationCode',
+        'price' => 'price',
+        'start' => 'start',
+        'status' => 'status'
     ];
 
     /**
@@ -219,20 +219,20 @@ class BookResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'booking_id' => 'setBookingId',
-        'status' => 'setStatus',
-        'hotel_confirmation_code' => 'setHotelConfirmationCode',
-        'start' => 'setStart',
-        'checkin' => 'setCheckin',
-        'end' => 'setEnd',
-        'checkout' => 'setCheckout',
-        'hotel' => 'setHotel',
         'booked_rooms' => 'setBookedRooms',
-        'guest_info' => 'setGuestInfo',
-        'created_at' => 'setCreatedAt',
+        'booking_id' => 'setBookingId',
         'cancellation' => 'setCancellation',
         'cancellation_policies' => 'setCancellationPolicies',
-        'price' => 'setPrice'
+        'checkin' => 'setCheckin',
+        'checkout' => 'setCheckout',
+        'created_at' => 'setCreatedAt',
+        'end' => 'setEnd',
+        'guest_info' => 'setGuestInfo',
+        'hotel' => 'setHotel',
+        'hotel_confirmation_code' => 'setHotelConfirmationCode',
+        'price' => 'setPrice',
+        'start' => 'setStart',
+        'status' => 'setStatus'
     ];
 
     /**
@@ -241,20 +241,20 @@ class BookResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'booking_id' => 'getBookingId',
-        'status' => 'getStatus',
-        'hotel_confirmation_code' => 'getHotelConfirmationCode',
-        'start' => 'getStart',
-        'checkin' => 'getCheckin',
-        'end' => 'getEnd',
-        'checkout' => 'getCheckout',
-        'hotel' => 'getHotel',
         'booked_rooms' => 'getBookedRooms',
-        'guest_info' => 'getGuestInfo',
-        'created_at' => 'getCreatedAt',
+        'booking_id' => 'getBookingId',
         'cancellation' => 'getCancellation',
         'cancellation_policies' => 'getCancellationPolicies',
-        'price' => 'getPrice'
+        'checkin' => 'getCheckin',
+        'checkout' => 'getCheckout',
+        'created_at' => 'getCreatedAt',
+        'end' => 'getEnd',
+        'guest_info' => 'getGuestInfo',
+        'hotel' => 'getHotel',
+        'hotel_confirmation_code' => 'getHotelConfirmationCode',
+        'price' => 'getPrice',
+        'start' => 'getStart',
+        'status' => 'getStatus'
     ];
 
     /**
@@ -314,20 +314,20 @@ class BookResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('booking_id', $data ?? [], null);
-        $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('hotel_confirmation_code', $data ?? [], null);
-        $this->setIfExists('start', $data ?? [], null);
-        $this->setIfExists('checkin', $data ?? [], null);
-        $this->setIfExists('end', $data ?? [], null);
-        $this->setIfExists('checkout', $data ?? [], null);
-        $this->setIfExists('hotel', $data ?? [], null);
         $this->setIfExists('booked_rooms', $data ?? [], null);
-        $this->setIfExists('guest_info', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('booking_id', $data ?? [], null);
         $this->setIfExists('cancellation', $data ?? [], null);
         $this->setIfExists('cancellation_policies', $data ?? [], null);
+        $this->setIfExists('checkin', $data ?? [], null);
+        $this->setIfExists('checkout', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('end', $data ?? [], null);
+        $this->setIfExists('guest_info', $data ?? [], null);
+        $this->setIfExists('hotel', $data ?? [], null);
+        $this->setIfExists('hotel_confirmation_code', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
+        $this->setIfExists('start', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], null);
     }
 
     /**
@@ -373,238 +373,6 @@ class BookResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets booking_id
-     *
-     * @return string|null
-     */
-    public function getBookingId()
-    {
-        return $this->container['booking_id'];
-    }
-
-    /**
-     * Sets booking_id
-     *
-     * @param string|null $booking_id booking_id
-     *
-     * @return self
-     */
-    public function setBookingId($booking_id)
-    {
-
-        if (is_null($booking_id)) {
-            throw new \InvalidArgumentException('non-nullable booking_id cannot be null');
-        }
-
-        $this->container['booking_id'] = $booking_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return string|null
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string|null $status status
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-
-        if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
-        }
-
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets hotel_confirmation_code
-     *
-     * @return string|null
-     */
-    public function getHotelConfirmationCode()
-    {
-        return $this->container['hotel_confirmation_code'];
-    }
-
-    /**
-     * Sets hotel_confirmation_code
-     *
-     * @param string|null $hotel_confirmation_code hotel_confirmation_code
-     *
-     * @return self
-     */
-    public function setHotelConfirmationCode($hotel_confirmation_code)
-    {
-
-        if (is_null($hotel_confirmation_code)) {
-            throw new \InvalidArgumentException('non-nullable hotel_confirmation_code cannot be null');
-        }
-
-        $this->container['hotel_confirmation_code'] = $hotel_confirmation_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets start
-     *
-     * @return string|null
-     */
-    public function getStart()
-    {
-        return $this->container['start'];
-    }
-
-    /**
-     * Sets start
-     *
-     * @param string|null $start start
-     *
-     * @return self
-     */
-    public function setStart($start)
-    {
-
-        if (is_null($start)) {
-            throw new \InvalidArgumentException('non-nullable start cannot be null');
-        }
-
-        $this->container['start'] = $start;
-
-        return $this;
-    }
-
-    /**
-     * Gets checkin
-     *
-     * @return string|null
-     */
-    public function getCheckin()
-    {
-        return $this->container['checkin'];
-    }
-
-    /**
-     * Sets checkin
-     *
-     * @param string|null $checkin checkin
-     *
-     * @return self
-     */
-    public function setCheckin($checkin)
-    {
-
-        if (is_null($checkin)) {
-            throw new \InvalidArgumentException('non-nullable checkin cannot be null');
-        }
-
-        $this->container['checkin'] = $checkin;
-
-        return $this;
-    }
-
-    /**
-     * Gets end
-     *
-     * @return string|null
-     */
-    public function getEnd()
-    {
-        return $this->container['end'];
-    }
-
-    /**
-     * Sets end
-     *
-     * @param string|null $end end
-     *
-     * @return self
-     */
-    public function setEnd($end)
-    {
-
-        if (is_null($end)) {
-            throw new \InvalidArgumentException('non-nullable end cannot be null');
-        }
-
-        $this->container['end'] = $end;
-
-        return $this;
-    }
-
-    /**
-     * Gets checkout
-     *
-     * @return string|null
-     */
-    public function getCheckout()
-    {
-        return $this->container['checkout'];
-    }
-
-    /**
-     * Sets checkout
-     *
-     * @param string|null $checkout checkout
-     *
-     * @return self
-     */
-    public function setCheckout($checkout)
-    {
-
-        if (is_null($checkout)) {
-            throw new \InvalidArgumentException('non-nullable checkout cannot be null');
-        }
-
-        $this->container['checkout'] = $checkout;
-
-        return $this;
-    }
-
-    /**
-     * Gets hotel
-     *
-     * @return \Nuitee\Model\BookResponseDataHotel|null
-     */
-    public function getHotel()
-    {
-        return $this->container['hotel'];
-    }
-
-    /**
-     * Sets hotel
-     *
-     * @param \Nuitee\Model\BookResponseDataHotel|null $hotel hotel
-     *
-     * @return self
-     */
-    public function setHotel($hotel)
-    {
-
-        if (is_null($hotel)) {
-            throw new \InvalidArgumentException('non-nullable hotel cannot be null');
-        }
-
-        $this->container['hotel'] = $hotel;
-
-        return $this;
-    }
-
-    /**
      * Gets booked_rooms
      *
      * @return \Nuitee\Model\BookResponseDataBookedRoomsInner[]|null
@@ -634,59 +402,30 @@ class BookResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets guest_info
-     *
-     * @return \Nuitee\Model\BookResponseDataGuestInfo|null
-     */
-    public function getGuestInfo()
-    {
-        return $this->container['guest_info'];
-    }
-
-    /**
-     * Sets guest_info
-     *
-     * @param \Nuitee\Model\BookResponseDataGuestInfo|null $guest_info guest_info
-     *
-     * @return self
-     */
-    public function setGuestInfo($guest_info)
-    {
-
-        if (is_null($guest_info)) {
-            throw new \InvalidArgumentException('non-nullable guest_info cannot be null');
-        }
-
-        $this->container['guest_info'] = $guest_info;
-
-        return $this;
-    }
-
-    /**
-     * Gets created_at
+     * Gets booking_id
      *
      * @return string|null
      */
-    public function getCreatedAt()
+    public function getBookingId()
     {
-        return $this->container['created_at'];
+        return $this->container['booking_id'];
     }
 
     /**
-     * Sets created_at
+     * Sets booking_id
      *
-     * @param string|null $created_at created_at
+     * @param string|null $booking_id booking_id
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setBookingId($booking_id)
     {
 
-        if (is_null($created_at)) {
-            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+        if (is_null($booking_id)) {
+            throw new \InvalidArgumentException('non-nullable booking_id cannot be null');
         }
 
-        $this->container['created_at'] = $created_at;
+        $this->container['booking_id'] = $booking_id;
 
         return $this;
     }
@@ -750,6 +489,209 @@ class BookResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets checkin
+     *
+     * @return string|null
+     */
+    public function getCheckin()
+    {
+        return $this->container['checkin'];
+    }
+
+    /**
+     * Sets checkin
+     *
+     * @param string|null $checkin checkin
+     *
+     * @return self
+     */
+    public function setCheckin($checkin)
+    {
+
+        if (is_null($checkin)) {
+            throw new \InvalidArgumentException('non-nullable checkin cannot be null');
+        }
+
+        $this->container['checkin'] = $checkin;
+
+        return $this;
+    }
+
+    /**
+     * Gets checkout
+     *
+     * @return string|null
+     */
+    public function getCheckout()
+    {
+        return $this->container['checkout'];
+    }
+
+    /**
+     * Sets checkout
+     *
+     * @param string|null $checkout checkout
+     *
+     * @return self
+     */
+    public function setCheckout($checkout)
+    {
+
+        if (is_null($checkout)) {
+            throw new \InvalidArgumentException('non-nullable checkout cannot be null');
+        }
+
+        $this->container['checkout'] = $checkout;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return string|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param string|null $created_at created_at
+     *
+     * @return self
+     */
+    public function setCreatedAt($created_at)
+    {
+
+        if (is_null($created_at)) {
+            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+        }
+
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets end
+     *
+     * @return string|null
+     */
+    public function getEnd()
+    {
+        return $this->container['end'];
+    }
+
+    /**
+     * Sets end
+     *
+     * @param string|null $end end
+     *
+     * @return self
+     */
+    public function setEnd($end)
+    {
+
+        if (is_null($end)) {
+            throw new \InvalidArgumentException('non-nullable end cannot be null');
+        }
+
+        $this->container['end'] = $end;
+
+        return $this;
+    }
+
+    /**
+     * Gets guest_info
+     *
+     * @return \Nuitee\Model\BookResponseDataGuestInfo|null
+     */
+    public function getGuestInfo()
+    {
+        return $this->container['guest_info'];
+    }
+
+    /**
+     * Sets guest_info
+     *
+     * @param \Nuitee\Model\BookResponseDataGuestInfo|null $guest_info guest_info
+     *
+     * @return self
+     */
+    public function setGuestInfo($guest_info)
+    {
+
+        if (is_null($guest_info)) {
+            throw new \InvalidArgumentException('non-nullable guest_info cannot be null');
+        }
+
+        $this->container['guest_info'] = $guest_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets hotel
+     *
+     * @return \Nuitee\Model\BookResponseDataHotel|null
+     */
+    public function getHotel()
+    {
+        return $this->container['hotel'];
+    }
+
+    /**
+     * Sets hotel
+     *
+     * @param \Nuitee\Model\BookResponseDataHotel|null $hotel hotel
+     *
+     * @return self
+     */
+    public function setHotel($hotel)
+    {
+
+        if (is_null($hotel)) {
+            throw new \InvalidArgumentException('non-nullable hotel cannot be null');
+        }
+
+        $this->container['hotel'] = $hotel;
+
+        return $this;
+    }
+
+    /**
+     * Gets hotel_confirmation_code
+     *
+     * @return string|null
+     */
+    public function getHotelConfirmationCode()
+    {
+        return $this->container['hotel_confirmation_code'];
+    }
+
+    /**
+     * Sets hotel_confirmation_code
+     *
+     * @param string|null $hotel_confirmation_code hotel_confirmation_code
+     *
+     * @return self
+     */
+    public function setHotelConfirmationCode($hotel_confirmation_code)
+    {
+
+        if (is_null($hotel_confirmation_code)) {
+            throw new \InvalidArgumentException('non-nullable hotel_confirmation_code cannot be null');
+        }
+
+        $this->container['hotel_confirmation_code'] = $hotel_confirmation_code;
+
+        return $this;
+    }
+
+    /**
      * Gets price
      *
      * @return float|null
@@ -774,6 +716,64 @@ class BookResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets start
+     *
+     * @return string|null
+     */
+    public function getStart()
+    {
+        return $this->container['start'];
+    }
+
+    /**
+     * Sets start
+     *
+     * @param string|null $start start
+     *
+     * @return self
+     */
+    public function setStart($start)
+    {
+
+        if (is_null($start)) {
+            throw new \InvalidArgumentException('non-nullable start cannot be null');
+        }
+
+        $this->container['start'] = $start;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string|null $status status
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+
+        if (is_null($status)) {
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
+        }
+
+        $this->container['status'] = $status;
 
         return $this;
     }

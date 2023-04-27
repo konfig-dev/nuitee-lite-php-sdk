@@ -49,11 +49,11 @@ class BookResponseDataHotel implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'hotel_id' => 'string',
-        'name' => 'string',
-        'star_rating' => 'float',
         'address' => '\Nuitee\Model\BookResponseDataHotelAddress',
-        'location' => '\Nuitee\Model\BookResponseDataHotelLocation'
+        'hotel_id' => 'string',
+        'location' => '\Nuitee\Model\BookResponseDataHotelLocation',
+        'name' => 'string',
+        'star_rating' => 'float'
     ];
 
     /**
@@ -64,11 +64,11 @@ class BookResponseDataHotel implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'hotel_id' => null,
-        'name' => null,
-        'star_rating' => null,
         'address' => null,
-        'location' => null
+        'hotel_id' => null,
+        'location' => null,
+        'name' => null,
+        'star_rating' => null
     ];
 
     /**
@@ -77,11 +77,11 @@ class BookResponseDataHotel implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'hotel_id' => false,
+        'address' => false,
+		'hotel_id' => false,
+		'location' => false,
 		'name' => false,
-		'star_rating' => false,
-		'address' => false,
-		'location' => false
+		'star_rating' => false
     ];
 
     /**
@@ -170,11 +170,11 @@ class BookResponseDataHotel implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'hotel_id' => 'hotelId',
-        'name' => 'name',
-        'star_rating' => 'starRating',
         'address' => 'address',
-        'location' => 'location'
+        'hotel_id' => 'hotelId',
+        'location' => 'location',
+        'name' => 'name',
+        'star_rating' => 'starRating'
     ];
 
     /**
@@ -183,11 +183,11 @@ class BookResponseDataHotel implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'hotel_id' => 'setHotelId',
-        'name' => 'setName',
-        'star_rating' => 'setStarRating',
         'address' => 'setAddress',
-        'location' => 'setLocation'
+        'hotel_id' => 'setHotelId',
+        'location' => 'setLocation',
+        'name' => 'setName',
+        'star_rating' => 'setStarRating'
     ];
 
     /**
@@ -196,11 +196,11 @@ class BookResponseDataHotel implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'hotel_id' => 'getHotelId',
-        'name' => 'getName',
-        'star_rating' => 'getStarRating',
         'address' => 'getAddress',
-        'location' => 'getLocation'
+        'hotel_id' => 'getHotelId',
+        'location' => 'getLocation',
+        'name' => 'getName',
+        'star_rating' => 'getStarRating'
     ];
 
     /**
@@ -260,11 +260,11 @@ class BookResponseDataHotel implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('address', $data ?? [], null);
         $this->setIfExists('hotel_id', $data ?? [], null);
+        $this->setIfExists('location', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('star_rating', $data ?? [], null);
-        $this->setIfExists('address', $data ?? [], null);
-        $this->setIfExists('location', $data ?? [], null);
     }
 
     /**
@@ -310,6 +310,35 @@ class BookResponseDataHotel implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
+     * Gets address
+     *
+     * @return \Nuitee\Model\BookResponseDataHotelAddress|null
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     *
+     * @param \Nuitee\Model\BookResponseDataHotelAddress|null $address address
+     *
+     * @return self
+     */
+    public function setAddress($address)
+    {
+
+        if (is_null($address)) {
+            throw new \InvalidArgumentException('non-nullable address cannot be null');
+        }
+
+        $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
      * Gets hotel_id
      *
      * @return string|null
@@ -334,6 +363,35 @@ class BookResponseDataHotel implements ModelInterface, ArrayAccess, \JsonSeriali
         }
 
         $this->container['hotel_id'] = $hotel_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets location
+     *
+     * @return \Nuitee\Model\BookResponseDataHotelLocation|null
+     */
+    public function getLocation()
+    {
+        return $this->container['location'];
+    }
+
+    /**
+     * Sets location
+     *
+     * @param \Nuitee\Model\BookResponseDataHotelLocation|null $location location
+     *
+     * @return self
+     */
+    public function setLocation($location)
+    {
+
+        if (is_null($location)) {
+            throw new \InvalidArgumentException('non-nullable location cannot be null');
+        }
+
+        $this->container['location'] = $location;
 
         return $this;
     }
@@ -392,64 +450,6 @@ class BookResponseDataHotel implements ModelInterface, ArrayAccess, \JsonSeriali
         }
 
         $this->container['star_rating'] = $star_rating;
-
-        return $this;
-    }
-
-    /**
-     * Gets address
-     *
-     * @return \Nuitee\Model\BookResponseDataHotelAddress|null
-     */
-    public function getAddress()
-    {
-        return $this->container['address'];
-    }
-
-    /**
-     * Sets address
-     *
-     * @param \Nuitee\Model\BookResponseDataHotelAddress|null $address address
-     *
-     * @return self
-     */
-    public function setAddress($address)
-    {
-
-        if (is_null($address)) {
-            throw new \InvalidArgumentException('non-nullable address cannot be null');
-        }
-
-        $this->container['address'] = $address;
-
-        return $this;
-    }
-
-    /**
-     * Gets location
-     *
-     * @return \Nuitee\Model\BookResponseDataHotelLocation|null
-     */
-    public function getLocation()
-    {
-        return $this->container['location'];
-    }
-
-    /**
-     * Sets location
-     *
-     * @param \Nuitee\Model\BookResponseDataHotelLocation|null $location location
-     *
-     * @return self
-     */
-    public function setLocation($location)
-    {
-
-        if (is_null($location)) {
-            throw new \InvalidArgumentException('non-nullable location cannot be null');
-        }
-
-        $this->container['location'] = $location;
 
         return $this;
     }

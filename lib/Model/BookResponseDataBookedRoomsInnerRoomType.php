@@ -49,8 +49,8 @@ class BookResponseDataBookedRoomsInnerRoomType implements ModelInterface, ArrayA
       * @var string[]
       */
     protected static $openAPITypes = [
-        'room_type_id' => 'string',
-        'name' => 'string'
+        'name' => 'string',
+        'room_type_id' => 'string'
     ];
 
     /**
@@ -61,8 +61,8 @@ class BookResponseDataBookedRoomsInnerRoomType implements ModelInterface, ArrayA
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'room_type_id' => null,
-        'name' => null
+        'name' => null,
+        'room_type_id' => null
     ];
 
     /**
@@ -71,8 +71,8 @@ class BookResponseDataBookedRoomsInnerRoomType implements ModelInterface, ArrayA
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'room_type_id' => false,
-		'name' => false
+        'name' => false,
+		'room_type_id' => false
     ];
 
     /**
@@ -161,8 +161,8 @@ class BookResponseDataBookedRoomsInnerRoomType implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $attributeMap = [
-        'room_type_id' => 'roomTypeId',
-        'name' => 'name'
+        'name' => 'name',
+        'room_type_id' => 'roomTypeId'
     ];
 
     /**
@@ -171,8 +171,8 @@ class BookResponseDataBookedRoomsInnerRoomType implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $setters = [
-        'room_type_id' => 'setRoomTypeId',
-        'name' => 'setName'
+        'name' => 'setName',
+        'room_type_id' => 'setRoomTypeId'
     ];
 
     /**
@@ -181,8 +181,8 @@ class BookResponseDataBookedRoomsInnerRoomType implements ModelInterface, ArrayA
      * @var string[]
      */
     protected static $getters = [
-        'room_type_id' => 'getRoomTypeId',
-        'name' => 'getName'
+        'name' => 'getName',
+        'room_type_id' => 'getRoomTypeId'
     ];
 
     /**
@@ -242,8 +242,8 @@ class BookResponseDataBookedRoomsInnerRoomType implements ModelInterface, ArrayA
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('room_type_id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('room_type_id', $data ?? [], null);
     }
 
     /**
@@ -289,35 +289,6 @@ class BookResponseDataBookedRoomsInnerRoomType implements ModelInterface, ArrayA
 
 
     /**
-     * Gets room_type_id
-     *
-     * @return string|null
-     */
-    public function getRoomTypeId()
-    {
-        return $this->container['room_type_id'];
-    }
-
-    /**
-     * Sets room_type_id
-     *
-     * @param string|null $room_type_id room_type_id
-     *
-     * @return self
-     */
-    public function setRoomTypeId($room_type_id)
-    {
-
-        if (is_null($room_type_id)) {
-            throw new \InvalidArgumentException('non-nullable room_type_id cannot be null');
-        }
-
-        $this->container['room_type_id'] = $room_type_id;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
      * @return string|null
@@ -342,6 +313,35 @@ class BookResponseDataBookedRoomsInnerRoomType implements ModelInterface, ArrayA
         }
 
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets room_type_id
+     *
+     * @return string|null
+     */
+    public function getRoomTypeId()
+    {
+        return $this->container['room_type_id'];
+    }
+
+    /**
+     * Sets room_type_id
+     *
+     * @param string|null $room_type_id room_type_id
+     *
+     * @return self
+     */
+    public function setRoomTypeId($room_type_id)
+    {
+
+        if (is_null($room_type_id)) {
+            throw new \InvalidArgumentException('non-nullable room_type_id cannot be null');
+        }
+
+        $this->container['room_type_id'] = $room_type_id;
 
         return $this;
     }

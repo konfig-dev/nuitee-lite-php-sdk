@@ -49,11 +49,11 @@ class PrebookResponseDataRoomTypesInnerRatesInner implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'rate_id' => 'string',
-        'name' => 'string',
+        'cancellation_policies' => '\Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerCancellationPolicies',
         'max_occupancy' => 'float',
-        'retail_rate' => '\Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerRetailRate',
-        'cancellation_policies' => '\Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerCancellationPolicies'
+        'name' => 'string',
+        'rate_id' => 'string',
+        'retail_rate' => '\Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerRetailRate'
     ];
 
     /**
@@ -64,11 +64,11 @@ class PrebookResponseDataRoomTypesInnerRatesInner implements ModelInterface, Arr
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'rate_id' => null,
-        'name' => null,
+        'cancellation_policies' => null,
         'max_occupancy' => null,
-        'retail_rate' => null,
-        'cancellation_policies' => null
+        'name' => null,
+        'rate_id' => null,
+        'retail_rate' => null
     ];
 
     /**
@@ -77,11 +77,11 @@ class PrebookResponseDataRoomTypesInnerRatesInner implements ModelInterface, Arr
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'rate_id' => false,
-		'name' => false,
+        'cancellation_policies' => false,
 		'max_occupancy' => false,
-		'retail_rate' => false,
-		'cancellation_policies' => false
+		'name' => false,
+		'rate_id' => false,
+		'retail_rate' => false
     ];
 
     /**
@@ -170,11 +170,11 @@ class PrebookResponseDataRoomTypesInnerRatesInner implements ModelInterface, Arr
      * @var string[]
      */
     protected static $attributeMap = [
-        'rate_id' => 'rateId',
-        'name' => 'name',
+        'cancellation_policies' => 'cancellationPolicies',
         'max_occupancy' => 'maxOccupancy',
-        'retail_rate' => 'retailRate',
-        'cancellation_policies' => 'cancellationPolicies'
+        'name' => 'name',
+        'rate_id' => 'rateId',
+        'retail_rate' => 'retailRate'
     ];
 
     /**
@@ -183,11 +183,11 @@ class PrebookResponseDataRoomTypesInnerRatesInner implements ModelInterface, Arr
      * @var string[]
      */
     protected static $setters = [
-        'rate_id' => 'setRateId',
-        'name' => 'setName',
+        'cancellation_policies' => 'setCancellationPolicies',
         'max_occupancy' => 'setMaxOccupancy',
-        'retail_rate' => 'setRetailRate',
-        'cancellation_policies' => 'setCancellationPolicies'
+        'name' => 'setName',
+        'rate_id' => 'setRateId',
+        'retail_rate' => 'setRetailRate'
     ];
 
     /**
@@ -196,11 +196,11 @@ class PrebookResponseDataRoomTypesInnerRatesInner implements ModelInterface, Arr
      * @var string[]
      */
     protected static $getters = [
-        'rate_id' => 'getRateId',
-        'name' => 'getName',
+        'cancellation_policies' => 'getCancellationPolicies',
         'max_occupancy' => 'getMaxOccupancy',
-        'retail_rate' => 'getRetailRate',
-        'cancellation_policies' => 'getCancellationPolicies'
+        'name' => 'getName',
+        'rate_id' => 'getRateId',
+        'retail_rate' => 'getRetailRate'
     ];
 
     /**
@@ -260,11 +260,11 @@ class PrebookResponseDataRoomTypesInnerRatesInner implements ModelInterface, Arr
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('rate_id', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('max_occupancy', $data ?? [], null);
-        $this->setIfExists('retail_rate', $data ?? [], null);
         $this->setIfExists('cancellation_policies', $data ?? [], null);
+        $this->setIfExists('max_occupancy', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('rate_id', $data ?? [], null);
+        $this->setIfExists('retail_rate', $data ?? [], null);
     }
 
     /**
@@ -310,59 +310,30 @@ class PrebookResponseDataRoomTypesInnerRatesInner implements ModelInterface, Arr
 
 
     /**
-     * Gets rate_id
+     * Gets cancellation_policies
      *
-     * @return string|null
+     * @return \Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerCancellationPolicies|null
      */
-    public function getRateId()
+    public function getCancellationPolicies()
     {
-        return $this->container['rate_id'];
+        return $this->container['cancellation_policies'];
     }
 
     /**
-     * Sets rate_id
+     * Sets cancellation_policies
      *
-     * @param string|null $rate_id rate_id
+     * @param \Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerCancellationPolicies|null $cancellation_policies cancellation_policies
      *
      * @return self
      */
-    public function setRateId($rate_id)
+    public function setCancellationPolicies($cancellation_policies)
     {
 
-        if (is_null($rate_id)) {
-            throw new \InvalidArgumentException('non-nullable rate_id cannot be null');
+        if (is_null($cancellation_policies)) {
+            throw new \InvalidArgumentException('non-nullable cancellation_policies cannot be null');
         }
 
-        $this->container['rate_id'] = $rate_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
-        }
-
-        $this->container['name'] = $name;
+        $this->container['cancellation_policies'] = $cancellation_policies;
 
         return $this;
     }
@@ -397,6 +368,64 @@ class PrebookResponseDataRoomTypesInnerRatesInner implements ModelInterface, Arr
     }
 
     /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        }
+
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets rate_id
+     *
+     * @return string|null
+     */
+    public function getRateId()
+    {
+        return $this->container['rate_id'];
+    }
+
+    /**
+     * Sets rate_id
+     *
+     * @param string|null $rate_id rate_id
+     *
+     * @return self
+     */
+    public function setRateId($rate_id)
+    {
+
+        if (is_null($rate_id)) {
+            throw new \InvalidArgumentException('non-nullable rate_id cannot be null');
+        }
+
+        $this->container['rate_id'] = $rate_id;
+
+        return $this;
+    }
+
+    /**
      * Gets retail_rate
      *
      * @return \Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerRetailRate|null
@@ -421,35 +450,6 @@ class PrebookResponseDataRoomTypesInnerRatesInner implements ModelInterface, Arr
         }
 
         $this->container['retail_rate'] = $retail_rate;
-
-        return $this;
-    }
-
-    /**
-     * Gets cancellation_policies
-     *
-     * @return \Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerCancellationPolicies|null
-     */
-    public function getCancellationPolicies()
-    {
-        return $this->container['cancellation_policies'];
-    }
-
-    /**
-     * Sets cancellation_policies
-     *
-     * @param \Nuitee\Model\PrebookResponseDataRoomTypesInnerRatesInnerCancellationPolicies|null $cancellation_policies cancellation_policies
-     *
-     * @return self
-     */
-    public function setCancellationPolicies($cancellation_policies)
-    {
-
-        if (is_null($cancellation_policies)) {
-            throw new \InvalidArgumentException('non-nullable cancellation_policies cannot be null');
-        }
-
-        $this->container['cancellation_policies'] = $cancellation_policies;
 
         return $this;
     }

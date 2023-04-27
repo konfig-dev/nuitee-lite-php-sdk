@@ -72,18 +72,18 @@ class PrebookResponseDataRoomTypesInnerRatesInnerRetailRateTest extends TestCase
     }
 
     /**
-     * Test attribute "total"
+     * Test attribute "taxes_and_fees"
      */
-    public function testPropertyTotal()
+    public function testPropertyTaxesAndFees()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "taxes_and_fees"
+     * Test attribute "total"
      */
-    public function testPropertyTaxesAndFees()
+    public function testPropertyTotal()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -49,9 +49,9 @@ class BookResponseDataCancellationFee implements ModelInterface, ArrayAccess, \J
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'string',
         'count' => 'float',
-        'price' => '\Nuitee\Model\BookResponseDataCancellationFeePrice'
+        'price' => '\Nuitee\Model\BookResponseDataCancellationFeePrice',
+        'type' => 'string'
     ];
 
     /**
@@ -62,9 +62,9 @@ class BookResponseDataCancellationFee implements ModelInterface, ArrayAccess, \J
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'type' => null,
         'count' => null,
-        'price' => null
+        'price' => null,
+        'type' => null
     ];
 
     /**
@@ -73,9 +73,9 @@ class BookResponseDataCancellationFee implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'type' => false,
-		'count' => false,
-		'price' => false
+        'count' => false,
+		'price' => false,
+		'type' => false
     ];
 
     /**
@@ -164,9 +164,9 @@ class BookResponseDataCancellationFee implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
         'count' => 'count',
-        'price' => 'price'
+        'price' => 'price',
+        'type' => 'type'
     ];
 
     /**
@@ -175,9 +175,9 @@ class BookResponseDataCancellationFee implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
         'count' => 'setCount',
-        'price' => 'setPrice'
+        'price' => 'setPrice',
+        'type' => 'setType'
     ];
 
     /**
@@ -186,9 +186,9 @@ class BookResponseDataCancellationFee implements ModelInterface, ArrayAccess, \J
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
         'count' => 'getCount',
-        'price' => 'getPrice'
+        'price' => 'getPrice',
+        'type' => 'getType'
     ];
 
     /**
@@ -248,9 +248,9 @@ class BookResponseDataCancellationFee implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('count', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -294,35 +294,6 @@ class BookResponseDataCancellationFee implements ModelInterface, ArrayAccess, \J
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
-        }
-
-        $this->container['type'] = $type;
-
-        return $this;
-    }
 
     /**
      * Gets count
@@ -378,6 +349,35 @@ class BookResponseDataCancellationFee implements ModelInterface, ArrayAccess, \J
         }
 
         $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        }
+
+        $this->container['type'] = $type;
 
         return $this;
     }

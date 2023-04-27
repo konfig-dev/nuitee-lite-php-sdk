@@ -72,9 +72,27 @@ class BookResponseDataHotelTest extends TestCase
     }
 
     /**
+     * Test attribute "address"
+     */
+    public function testPropertyAddress()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "hotel_id"
      */
     public function testPropertyHotelId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "location"
+     */
+    public function testPropertyLocation()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -93,24 +111,6 @@ class BookResponseDataHotelTest extends TestCase
      * Test attribute "star_rating"
      */
     public function testPropertyStarRating()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "address"
-     */
-    public function testPropertyAddress()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "location"
-     */
-    public function testPropertyLocation()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

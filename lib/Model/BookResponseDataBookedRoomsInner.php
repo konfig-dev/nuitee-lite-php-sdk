@@ -49,10 +49,10 @@ class BookResponseDataBookedRoomsInner implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'room_type' => '\Nuitee\Model\BookResponseDataBookedRoomsInnerRoomType',
         'adults' => 'float',
         'children' => 'float',
-        'rate' => '\Nuitee\Model\BookResponseDataBookedRoomsInnerRate'
+        'rate' => '\Nuitee\Model\BookResponseDataBookedRoomsInnerRate',
+        'room_type' => '\Nuitee\Model\BookResponseDataBookedRoomsInnerRoomType'
     ];
 
     /**
@@ -63,10 +63,10 @@ class BookResponseDataBookedRoomsInner implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'room_type' => null,
         'adults' => null,
         'children' => null,
-        'rate' => null
+        'rate' => null,
+        'room_type' => null
     ];
 
     /**
@@ -75,10 +75,10 @@ class BookResponseDataBookedRoomsInner implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'room_type' => false,
-		'adults' => false,
+        'adults' => false,
 		'children' => false,
-		'rate' => false
+		'rate' => false,
+		'room_type' => false
     ];
 
     /**
@@ -167,10 +167,10 @@ class BookResponseDataBookedRoomsInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'room_type' => 'roomType',
         'adults' => 'adults',
         'children' => 'children',
-        'rate' => 'rate'
+        'rate' => 'rate',
+        'room_type' => 'roomType'
     ];
 
     /**
@@ -179,10 +179,10 @@ class BookResponseDataBookedRoomsInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'room_type' => 'setRoomType',
         'adults' => 'setAdults',
         'children' => 'setChildren',
-        'rate' => 'setRate'
+        'rate' => 'setRate',
+        'room_type' => 'setRoomType'
     ];
 
     /**
@@ -191,10 +191,10 @@ class BookResponseDataBookedRoomsInner implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'room_type' => 'getRoomType',
         'adults' => 'getAdults',
         'children' => 'getChildren',
-        'rate' => 'getRate'
+        'rate' => 'getRate',
+        'room_type' => 'getRoomType'
     ];
 
     /**
@@ -254,10 +254,10 @@ class BookResponseDataBookedRoomsInner implements ModelInterface, ArrayAccess, \
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('room_type', $data ?? [], null);
         $this->setIfExists('adults', $data ?? [], null);
         $this->setIfExists('children', $data ?? [], null);
         $this->setIfExists('rate', $data ?? [], null);
+        $this->setIfExists('room_type', $data ?? [], null);
     }
 
     /**
@@ -301,35 +301,6 @@ class BookResponseDataBookedRoomsInner implements ModelInterface, ArrayAccess, \
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets room_type
-     *
-     * @return \Nuitee\Model\BookResponseDataBookedRoomsInnerRoomType|null
-     */
-    public function getRoomType()
-    {
-        return $this->container['room_type'];
-    }
-
-    /**
-     * Sets room_type
-     *
-     * @param \Nuitee\Model\BookResponseDataBookedRoomsInnerRoomType|null $room_type room_type
-     *
-     * @return self
-     */
-    public function setRoomType($room_type)
-    {
-
-        if (is_null($room_type)) {
-            throw new \InvalidArgumentException('non-nullable room_type cannot be null');
-        }
-
-        $this->container['room_type'] = $room_type;
-
-        return $this;
-    }
 
     /**
      * Gets adults
@@ -414,6 +385,35 @@ class BookResponseDataBookedRoomsInner implements ModelInterface, ArrayAccess, \
         }
 
         $this->container['rate'] = $rate;
+
+        return $this;
+    }
+
+    /**
+     * Gets room_type
+     *
+     * @return \Nuitee\Model\BookResponseDataBookedRoomsInnerRoomType|null
+     */
+    public function getRoomType()
+    {
+        return $this->container['room_type'];
+    }
+
+    /**
+     * Sets room_type
+     *
+     * @param \Nuitee\Model\BookResponseDataBookedRoomsInnerRoomType|null $room_type room_type
+     *
+     * @return self
+     */
+    public function setRoomType($room_type)
+    {
+
+        if (is_null($room_type)) {
+            throw new \InvalidArgumentException('non-nullable room_type cannot be null');
+        }
+
+        $this->container['room_type'] = $room_type;
 
         return $this;
     }

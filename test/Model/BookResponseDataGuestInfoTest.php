@@ -72,6 +72,15 @@ class BookResponseDataGuestInfoTest extends TestCase
     }
 
     /**
+     * Test attribute "guest_email"
+     */
+    public function testPropertyGuestEmail()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "guest_first_name"
      */
     public function testPropertyGuestFirstName()
@@ -84,15 +93,6 @@ class BookResponseDataGuestInfoTest extends TestCase
      * Test attribute "guest_last_name"
      */
     public function testPropertyGuestLastName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "guest_email"
-     */
-    public function testPropertyGuestEmail()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
